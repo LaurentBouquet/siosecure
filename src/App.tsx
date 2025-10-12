@@ -62,8 +62,11 @@ function App() {
     return new Date() > d;
   };
 
+  // For chaining counters: index of the counter that is allowed to start (0..2)
+  const [activeCounterIndex, setActiveCounterIndex] = useState(0);
+
   // CountUp component: animation starts when the element becomes visible (IntersectionObserver)
-  const CountUp = ({ end, suffix = '', decimals = 0, duration = 2000 }: { end: number; suffix?: string; decimals?: number; duration?: number; }) => {
+  const CountUp = ({ end, suffix = '', decimals = 0, duration = 2000, onComplete }: { end: number; suffix?: string; decimals?: number; duration?: number; onComplete?: () => void; }) => {
     const ref = useRef<HTMLSpanElement | null>(null);
     const [started, setStarted] = useState(false);
 
@@ -97,6 +100,9 @@ function App() {
         }
         if (progress < 1) {
           rafId = requestAnimationFrame(step);
+        } else {
+          // finished
+          if (onComplete) onComplete();
         }
       };
       rafId = requestAnimationFrame(step);
@@ -389,21 +395,22 @@ function App() {
                     Télécharger l'offre d'emploi (PDF)
                   </a>
                   
-                  {isExpired(deadlines.infra) ? (
-                    <button
-                      disabled
-                      className="px-8 py-4 font-semibold text-gray-400 transition-all transform bg-gray-200 rounded-lg cursor-not-allowed"
-                    >
-                      Postuler maintenant
-                    </button>
-                  ) : (
-                    <a
-                      href={`mailto:siosecure@joliciel.pro?subject=${encodeURIComponent('Candidature - Consultant infra sécurisée junior')}`}
-                      className="px-8 py-4 font-semibold text-blue-600 transition-all transform bg-white rounded-lg hover:bg-blue-50 hover:scale-105"
-                    >
-                      Postuler maintenant
-                    </a>
-                  )}
+                        {isExpired(deadlines.infra) ? (
+                          <button
+                            disabled
+                            title={`Clôturée le ${formatDateFr(deadlines.infra)}`}
+                            className="px-8 py-4 font-semibold text-gray-400 transition-all transform bg-gray-200 rounded-lg cursor-not-allowed"
+                          >
+                            Postuler maintenant
+                          </button>
+                        ) : (
+                          <a
+                            href={`mailto:siosecure@joliciel.pro?subject=${encodeURIComponent('Candidature - Consultant infra sécurisée junior')}&body=${encodeURIComponent("Bonjour,\n\nJe souhaite postuler au poste de Consultant infra sécurisée junior.\n\nNom :\nPrénom :\nTéléphone :\nEmail :\nMessage :\n\nVeuillez trouver mon CV en pièce jointe.\n\nCordialement,\n")}`}
+                            className="px-8 py-4 font-semibold text-blue-600 transition-all transform bg-white rounded-lg hover:bg-blue-50 hover:scale-105"
+                          >
+                            Postuler maintenant
+                          </a>
+                        )}
 
                   {/* Deadline & status */}
                   <div className="flex items-center justify-start mt-3 space-x-3 md:mt-0 md:ml-4">
@@ -466,13 +473,14 @@ function App() {
                   {isExpired(deadlines.dev) ? (
                     <button
                       disabled
+                      title={`Clôturée le ${formatDateFr(deadlines.dev)}`}
                       className="px-8 py-4 font-semibold text-gray-400 transition-all transform bg-gray-200 rounded-lg cursor-not-allowed"
                     >
                       Postuler maintenant
                     </button>
                   ) : (
                     <a
-                      href={`mailto:siosecure@joliciel.pro?subject=${encodeURIComponent('Candidature - Consultant développement sécurisé junior')}`}
+                      href={`mailto:siosecure@joliciel.pro?subject=${encodeURIComponent('Candidature - Consultant développement sécurisé junior')}&body=${encodeURIComponent("Bonjour,\n\nJe souhaite postuler au poste de Consultant développement sécurisé junior.\n\nNom :\nPrénom :\nTéléphone :\nEmail :\nMessage :\n\nVeuillez trouver mon CV en pièce jointe.\n\nCordialement,\n")}`}
                       className="px-8 py-4 font-semibold text-blue-600 transition-all transform bg-white rounded-lg hover:bg-blue-50 hover:scale-105"
                     >
                       Postuler maintenant
@@ -497,15 +505,35 @@ function App() {
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
             <div className="text-center">
-              <div className="mb-2 text-4xl font-bold text-blue-600"><CountUp end={99.9} decimals={1} suffix="%" duration={2000} /></div>
+              <div className="mb-2 text-4xl font-bold text-blue-600">
+                <CountUp
+                  end={99.9}
+                  decimals={1}
+                  suffix="%"
+                  duration={2000}
+                  onComplete={() => setActiveCounterIndex(1)}
+                />
+              </div>
               <p className="text-gray-600">Disponibilité moyenne des services</p>
             </div>
             <div className="text-center">
-              <div className="mb-2 text-4xl font-bold text-blue-600"><CountUp end={120} duration={2000} /></div>
+                  <div className="mb-2 text-4xl font-bold text-blue-600">
+                    {activeCounterIndex >= 1 ? (
+                      <CountUp end={120} duration={2000} onComplete={() => setActiveCounterIndex(2)} />
+                    ) : (
+                      <span>0</span>
+                    )}
+                  </div>
               <p className="text-gray-600">Projets livrés à nos clients</p>
             </div>
             <div className="text-center">
-              <div className="mb-2 text-4xl font-bold text-blue-600"><CountUp end={30} duration={2000} /></div>
+                  <div className="mb-2 text-4xl font-bold text-blue-600">
+                    {activeCounterIndex >= 2 ? (
+                      <CountUp end={30} duration={2000} />
+                    ) : (
+                      <span>0</span>
+                    )}
+                  </div>
               <p className="text-gray-600">Clients actifs</p>
             </div>
           </div>
