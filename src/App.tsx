@@ -453,16 +453,16 @@ function App() {
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
             <div className="text-center">
-              <div className="mb-2 text-4xl font-bold text-blue-600">95%</div>
-              <p className="text-gray-600">Taux d'embauche après apprentissage</p>
+              <div className="mb-2 text-4xl font-bold text-blue-600">99.9%</div>
+              <p className="text-gray-600">Disponibilité moyenne des services</p>
             </div>
             <div className="text-center">
-              <div className="mb-2 text-4xl font-bold text-blue-600">200+</div>
-              <p className="text-gray-600">Apprentis formés chaque année</p>
+              <div className="mb-2 text-4xl font-bold text-blue-600">120+</div>
+              <p className="text-gray-600">Projets livrés à nos clients</p>
             </div>
             <div className="text-center">
-              <div className="mb-2 text-4xl font-bold text-blue-600">15+</div>
-              <p className="text-gray-600">Programmes de formation</p>
+              <div className="mb-2 text-4xl font-bold text-blue-600">30+</div>
+              <p className="text-gray-600">Clients actifs</p>
             </div>
           </div>
         </div>
