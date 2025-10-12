@@ -64,16 +64,27 @@ function App() {
 
   // For chaining counters: index of the counter that is allowed to start (0..2)
   const [activeCounterIndex, setActiveCounterIndex] = useState(0);
+  // Track which counters have already played to avoid replay on unmount/remount
+  const [countersPlayed, setCountersPlayed] = useState<boolean[]>([false, false, false]);
 
   // CountUp component: animation starts when the element becomes visible (IntersectionObserver)
-  const CountUp = ({ end, suffix = '', decimals = 0, duration = 2000, onComplete }: { end: number; suffix?: string; decimals?: number; duration?: number; onComplete?: () => void; }) => {
+  const CountUp = ({ end, suffix = '', decimals = 0, duration = 2000, onComplete, enabled = true, played = false }: { end: number; suffix?: string; decimals?: number; duration?: number; onComplete?: () => void; enabled?: boolean; played?: boolean; }) => {
     const ref = useRef<HTMLSpanElement | null>(null);
     const [started, setStarted] = useState(false);
 
-    // Observe visibility
+    // If already played, render the final value immediately and skip observing/animation
+    const finalText = decimals === 0 ? Math.round(end).toString() + suffix : end.toFixed(decimals) + suffix;
+    useEffect(() => {
+      if (played && ref.current) {
+        ref.current.textContent = finalText;
+      }
+    }, [played, finalText]);
+
+    // Observe visibility (only if enabled and not already played)
     useEffect(() => {
       const el = ref.current;
       if (!el) return;
+      if (!enabled || played) return;
       const obs = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -85,7 +96,7 @@ function App() {
       }, { threshold: 0.2 });
       obs.observe(el);
       return () => obs.disconnect();
-    }, []);
+    }, [enabled, played]);
 
     useEffect(() => {
       if (!started) return;
@@ -102,6 +113,7 @@ function App() {
           rafId = requestAnimationFrame(step);
         } else {
           // finished
+          if (ref.current) ref.current.textContent = finalText;
           if (onComplete) onComplete();
         }
       };
@@ -511,7 +523,13 @@ function App() {
                   decimals={1}
                   suffix="%"
                   duration={2000}
-                  onComplete={() => setActiveCounterIndex(1)}
+                  enabled={!countersPlayed[0]}
+                  played={countersPlayed[0]}
+                  onComplete={() => {
+                    // mark as played and activate next
+                    setCountersPlayed(prev => { const copy = [...prev]; copy[0] = true; return copy; });
+                    setActiveCounterIndex(1);
+                  }}
                 />
               </div>
               <p className="text-gray-600">Disponibilité moyenne des services</p>
@@ -519,7 +537,16 @@ function App() {
             <div className="text-center">
                   <div className="mb-2 text-4xl font-bold text-blue-600">
                     {activeCounterIndex >= 1 ? (
-                      <CountUp end={120} duration={2000} onComplete={() => setActiveCounterIndex(2)} />
+                      <CountUp
+                        end={120}
+                        duration={2000}
+                        enabled={!countersPlayed[1]}
+                        played={countersPlayed[1]}
+                        onComplete={() => {
+                          setCountersPlayed(prev => { const copy = [...prev]; copy[1] = true; return copy; });
+                          setActiveCounterIndex(2);
+                        }}
+                      />
                     ) : (
                       <span>0</span>
                     )}
@@ -529,7 +556,13 @@ function App() {
             <div className="text-center">
                   <div className="mb-2 text-4xl font-bold text-blue-600">
                     {activeCounterIndex >= 2 ? (
-                      <CountUp end={30} duration={2000} />
+                      <CountUp
+                        end={30}
+                        duration={2000}
+                        enabled={!countersPlayed[2]}
+                        played={countersPlayed[2]}
+                        onComplete={() => setCountersPlayed(prev => { const copy = [...prev]; copy[2] = true; return copy; })}
+                      />
                     ) : (
                       <span>0</span>
                     )}
