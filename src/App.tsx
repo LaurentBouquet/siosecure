@@ -303,7 +303,7 @@ function App() {
                   </div>
 
                   <div className="p-6 rounded-lg bg-blue-50">
-                    <h4 className="mb-3 text-lg font-bold text-gray-900">Profil & Avantages</h4>
+                    <h4 className="mb-3 text-lg font-bold text-gray-900">Profil & avantages</h4>
                     <ul className="space-y-2 text-gray-700">
                       <li>• Étudiant(e) en BTS SIO option SISR ou formation équivalente.</li>
                       <li>• Connaissances de base en systèmes Linux (Debian) et réseaux (TCP/IP, VLANs).</li>
