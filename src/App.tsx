@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Network, Users, Globe, Award, MapPin, Mail, Phone, Linkedin, Twitter, FileText } from 'lucide-react';
 
 function App() {
@@ -60,6 +60,28 @@ function App() {
     // consider the whole day
     d.setHours(23, 59, 59, 999);
     return new Date() > d;
+  };
+
+  // Simple CountUp component (no external lib) - supports integers and one decimal place
+  const CountUp = ({ end, suffix = '', decimals = 0 }: { end: number; suffix?: string; decimals?: number; }) => {
+    const ref = useRef<HTMLSpanElement | null>(null);
+    useEffect(() => {
+      let start: number | null = null;
+      const duration = 800;
+      const step = (timestamp: number) => {
+        if (!start) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+        const current = end * progress;
+        if (ref.current) {
+          ref.current.textContent = decimals === 0 ? Math.round(current).toString() + suffix : current.toFixed(decimals) + suffix;
+        }
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      };
+      requestAnimationFrame(step);
+    }, [end, suffix, decimals]);
+    return <span ref={ref}></span>;
   };
 
   return (
@@ -453,15 +475,15 @@ function App() {
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
             <div className="text-center">
-              <div className="mb-2 text-4xl font-bold text-blue-600">99.9%</div>
+              <div className="mb-2 text-4xl font-bold text-blue-600"><CountUp end={99.9} decimals={1} suffix="%" /></div>
               <p className="text-gray-600">Disponibilité moyenne des services</p>
             </div>
             <div className="text-center">
-              <div className="mb-2 text-4xl font-bold text-blue-600">120+</div>
+              <div className="mb-2 text-4xl font-bold text-blue-600"><CountUp end={120} /></div>
               <p className="text-gray-600">Projets livrés à nos clients</p>
             </div>
             <div className="text-center">
-              <div className="mb-2 text-4xl font-bold text-blue-600">30+</div>
+              <div className="mb-2 text-4xl font-bold text-blue-600"><CountUp end={30} /></div>
               <p className="text-gray-600">Clients actifs</p>
             </div>
           </div>
