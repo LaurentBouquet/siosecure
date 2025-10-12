@@ -1,0 +1,110 @@
+# GigaNet - Site Web Officiel
+
+Site web officiel de GigaNet, leader européen des télécommunications.
+
+
+## Déploiement sur GitHub Pages
+
+Ce projet est configuré pour être déployé automatiquement sur GitHub Pages.
+
+
+### Configuration automatique (recommandé)
+
+Le projet inclut un workflow GitHub Actions qui déploie automatiquement le site à chaque push sur la branche `main`.
+
+1. **Activez GitHub Pages dans les paramètres du dépôt :**
+   - Allez dans `Settings` > `Pages`
+   - Source : sélectionnez `GitHub Actions`
+
+2. **Poussez votre code sur GitHub :**
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git push origin main
+   ```
+
+3. Le site sera automatiquement déployé à l'adresse configurée dans le fichier `CNAME` : `giganet.joliciel.pro`
+
+
+
+
+### Installation
+
+```bash
+npm install
+```
+
+
+### Déploiement manuel (optionnel)
+
+Si vous préférez déployer manuellement :
+
+```bash
+npm run deploy
+```
+
+Cette commande :
+- Construit le projet (`npm run build`)
+- Déploie le dossier `dist` sur la branche `gh-pages`
+
+
+
+## Configuration du domaine personnalisé
+
+Le fichier `CNAME` contient le domaine personnalisé : `giganet.joliciel.pro`
+
+Pour utiliser votre propre domaine :
+1. Modifiez le fichier `CNAME` avec votre domaine
+2. Configurez les DNS de votre domaine pour pointer vers GitHub Pages
+
+
+
+
+## Développement local
+
+```bash
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
+npm run dev
+
+# Construire pour la production
+npm run build
+
+# Prévisualiser la build de production
+npm run preview
+```
+
+
+
+## Technologies utilisées
+
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- Lucide React (icônes)
+
+
+
+## Structure du projet
+
+```
+.
+├── public/              # Fichiers statiques
+│   └── GigaNet_logo.png
+├── src/
+│   ├── App.tsx         # Composant principal
+│   ├── main.tsx        # Point d'entrée
+│   └── index.css       # Styles globaux
+├── .github/
+│   └── workflows/
+│       └── deploy.yml  # Configuration GitHub Actions
+├── CNAME               # Configuration du domaine personnalisé
+└── vite.config.ts      # Configuration Vite
+```
+
+## Licence
+
+© 2025 GigaNet. Tous droits réservés.

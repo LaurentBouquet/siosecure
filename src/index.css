@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Images responsives */
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Formulaires responsives */
+input, textarea, select, button {
+	font-size: 1rem;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+/* Correction du scroll horizontal */
+body {
+	overflow-x: hidden;
+}
+
+/* Typographie mobile */
+h1, h2, h3, h4, h5, h6 {
+	word-break: break-word;
+}
+
+/* Padding pour éviter le chevauchement de la navbar sur mobile */
+.pt-navbar {
+	/* valeur réduite par défaut pour éviter trop d'espace sur petits écrans */
+	padding-top: 1.5rem;
+}
+
+/* Sur écrans moyens et larges on conserve l'espace équivalent à la hauteur de la navbar (h-20 = 5rem) */
+@media (min-width: 768px) {
+	.pt-navbar {
+		padding-top: 5rem;
+	}
+}
