@@ -138,7 +138,7 @@ function App() {
               </h1>
               <p className="mb-6 text-lg font-medium text-gray-700">Bâtir et protéger votre logiciel et son infrastructure</p>
               <p className="mb-8 text-base leading-relaxed text-gray-600 sm:text-xl">
-                Depuis notre siège à Paris La Défense, nous accompagnons nos clients depuis notre datacenter basé en France (infrastructure externalisée) pour concevoir, sécuriser et opérer leurs solutions numériques critiques.
+                Depuis notre siège en Normandie, nous accompagnons nos clients depuis notre datacenter basé en Europe (infrastructure externalisée) pour concevoir, sécuriser et opérer leurs solutions numériques critiques.
               </p>
               <div className="flex flex-col flex-wrap gap-4 sm:flex-row">
                 <button
@@ -182,7 +182,7 @@ function App() {
               <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full">
                 <MapPin className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="mb-2 text-xl font-bold text-gray-900">Paris La Défense</h3>
+              <h3 className="mb-2 text-xl font-bold text-gray-900">Quelque part en Normandie</h3>
               <p className="text-gray-600">Siège social au cœur du quartier d'affaires européen</p>
             </div>
 
@@ -209,7 +209,7 @@ function App() {
               SIOsecure est une ESN polyvalente experte en infrastructure système et réseau, développement Web et mobile, ainsi qu'en cybersécurité. Nous aidons nos clients à concevoir, sécuriser et exploiter leurs solutions numériques en combinant expertise technique et bonnes pratiques de sécurité.
             </p>
             <p className="text-lg leading-relaxed text-gray-700">
-              Nous opérons depuis un datacenter basé en France (infrastructure externalisée) et investissons dans la formation continue de nos talents pour garantir des services fiables et conformes aux meilleures pratiques de sécurité.
+              Nous opérons depuis un datacenter basé en Europe (infrastructure externalisée) et investissons dans la formation continue de nos talents pour garantir des services fiables et conformes aux meilleures pratiques de sécurité.
             </p>
           </div>
         </div>
@@ -228,32 +228,32 @@ function App() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 md:gap-8">
             {[
               {
-                title: 'Infrastructure Système & Réseau',
+                title: 'Infrastructure système & réseau',
                 description: 'Conception, déploiement et exploitation d\'infrastructures systèmes et réseaux résilientes et sécurisées.',
                 icon: Network
               },
               {
-                title: 'Développement Web & Mobile',
+                title: 'Développement Web & mobile',
                 description: 'Conception et développement d\'applications Web et mobile sécurisées et performantes (front & back).',
                 icon: Award
               },
               {
-                title: 'Cybersécurité Applicative',
+                title: 'Cybersécurité applicative',
                 description: 'Audits, tests d\'intrusion et remédiation sécurité pour applications et APIs (aligné OWASP).',
                 icon: Globe
               },
               {
-                title: 'Cloud & Datacenter',
+                title: 'Cloud & datacenter',
                 description: 'Services d\'hébergement et d\'orchestration cloud sécurisés en datacenter français.',
                 icon: Globe
               },
               {
-                title: 'Support & Maintenance',
+                title: 'Support & maintenance',
                 description: 'Équipes d\'assistance et d\'exploitation pour garantir la disponibilité des services.',
                 icon: Users
               },
               {
-                title: 'Conseil & Formation',
+                title: 'Conseil & formation',
                 description: 'Accompagnement stratégique, formation sécurité et bonnes pratiques DevOps.',
                 icon: Award
               }
@@ -278,37 +278,48 @@ function App() {
           </div>
 
           <div className="p-6 mb-8 text-white bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl sm:p-12 sm:mb-12">
-            <div className="mx-auto max-w-7xl">
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <div className="mx-auto max-w-7xl">
+              <div className="grid grid-cols-1 gap-10 md:gap-16 md:grid-cols-2">
 
                 {/* Panneau 1 : Consultant développement sécurisé junior */}
-                <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm">
-                  <h3 className="mb-4 text-2xl font-bold text-blue-100">Consultant développement sécurisé junior</h3>
-                  <p className="mb-4 text-blue-50">Rejoignez notre pôle « Développement Web & Sécurité » et participez au développement et à la sécurisation d'applications Web et d'architectures DevOps pour nos clients.</p>
+                <div className="p-6 px-4 bg-white border border-gray-100 shadow-lg rounded-2xl">
+                  <h3 className="mb-4 text-2xl font-bold text-blue-600">Consultant développement sécurisé junior</h3>
+                  <p className="mb-4 text-gray-700">Rejoignez notre pôle « Développement Web & Sécurité » et participez au développement et à la sécurisation d'applications Web et d'architectures DevOps pour nos clients.</p>
 
-                  <h4 className="mb-2 text-lg font-bold text-blue-50">Profil recherché</h4>
-                  <ul className="mb-4 space-y-2 list-disc list-inside text-blue-50">
+                  <p className="mb-4 text-gray-700">Vous interviendrez au sein d’une équipe et serez en charge de :</p>
+
+                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
+                    <li>Développer et sécuriser des applications Web full-stack avec Symfony et Next.js, en intégrant des API
+REST connectées à Supabase.</li>
+                    <li>Implémenter des mécanismes d'authentification sécurisés (JWT, OAuth2, OpenID Connect) et gérer
+les sessions utilisateur.</li>
+                    <li>Réaliser des audits de vulnérabilités sur les applications Web (recherche d'injections SQL, XSS,
+LFI/RFI) selon les standards OWASP.</li>
+                    <li>Automatiser les déploiements DevOps (CI/CD avec Docker, scripts d'automatisation) et appliquer des
+pratiques de cryptographie (chiffrement des données sensibles).</li>
+                    <li>Rédiger des rapports techniques et de sécurité destinés à nos clients.</li>
+                  </ul>
+                  
+                  <h4 className="mb-2 text-lg font-bold text-gray-900">Profil recherché</h4>
+                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
                     <li>Étudiant(e) ou jeune diplômé(e) en développement (BTS SIO SLAM, licence ou équivalent)</li>
                     <li>Connaissances en développement Web (JavaScript/TypeScript, frameworks modernes)</li>
                     <li>Sensibilité à la sécurité applicative (OWASP) et volonté d'apprendre</li>
                     <li>Intérêt pour les pratiques DevOps (CI/CD, conteneurs)</li>
                   </ul>
 
-                  <h4 className="mb-2 text-lg font-bold text-blue-50">Nous offrons</h4>
-                  <ul className="mb-4 space-y-2 list-disc list-inside text-blue-50">
-                    <li>Expérience pratique sur des projets réels</li>
-                    <li>Accompagnement par des experts en sécurité</li>
-                    <li>Formations et certifications (OWASP, frameworks, etc.)</li>
+                  <h4 className="mb-2 text-lg font-bold text-gray-900">Ce que nous offrons</h4>
+                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
+                    <li>Expérience sur des projets et une infrastructure externalisée réelle.</li>
+                    <li>Accompagnement par des experts en sécurité informatique.</li>
+                    <li>Opportunité de monter en compétences rapidement.</li>
                   </ul>
 
-                  <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
-                    <button
-                      onClick={() => scrollToSection('contact')}
-                      className="px-6 py-3 font-semibold text-blue-600 transition-all transform bg-white rounded-lg hover:bg-blue-50 hover:scale-105"
-                    >
-                      Postuler
-                    </button>
+                  <hr />
 
+                  
+                  <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
+                
                     <a
                       href="/offres-emploi/ConsultantDev/01_offre_emploi.pdf"
                       download
@@ -317,15 +328,32 @@ function App() {
                       <FileText className="w-5 h-5 mr-2" />
                       Télécharger (PDF)
                     </a>
+                    
+                    <a href="mailto:siosecure@joliciel.pro" className="px-6 py-3 font-semibold text-white transition-all transform bg-green-600 rounded-lg hover:bg-blue-50 hover:scale-105">
+                      Postuler
+                    </a>  
+
                   </div>
+                  
+                  <div className="flex flex-col mt-4 ml-10">
+                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Date limite : Vendredi 07/11/2025 – 13 h</p>
+                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Lieu : Normandie</p>
+                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Contact : siosecure@joliciel.pro</p>
+                  </div>
+
+
+
                 </div>
 
-                {/* Panneau 2 : Consultant Infra Sécurisée Junior */}
-                <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm">
-                  <h3 className="mb-4 text-2xl font-bold text-blue-100">Consultant Infra Sécurisée Junior</h3>
-                  <p className="mb-4 text-blue-50">Dans le cadre du développement de nos activités, nous recherchons des consultants cybersécurité junior pour rejoindre notre pôle « Infrastructure & Sécurité ». Vous interviendrez au sein d’une équipe projet et serez en charge de :</p>
+                {/* Panneau 2 : Consultant infra sécurisée junior */}
+                <div className="p-6 px-4 bg-white border border-gray-100 shadow-lg rounded-2xl">
+                  <h3 className="mb-4 text-2xl font-bold text-blue-600">Consultant infra sécurisée junior</h3>
+                  <p className="mb-4 text-gray-700">Nous recherchons des consultants cybersécurité junior 
+                    pour rejoindre notre pôle « Infrastructure & Sécurité », dans le cadre du développement de nos activités.</p>
+                    
+                  <p className="mb-4 text-gray-700">Vous interviendrez au sein d’une équipe et serez en charge de :</p>
 
-                  <ul className="mb-4 space-y-2 list-disc list-inside text-blue-50">
+                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
                     <li>Déployer et administrer un pare-feu de type pfSense.</li>
                     <li>Mettre en place et sécuriser une infrastructure mutualisée (Debian 13, Docker, LXC).</li>
                     <li>Déployer des services métiers.</li>
@@ -333,8 +361,8 @@ function App() {
                     <li>Rédiger des rapports techniques et de sécurité destinés à nos clients.</li>
                   </ul>
 
-                  <h4 className="mb-2 text-lg font-bold text-blue-50">Profil recherché</h4>
-                  <ul className="mb-4 space-y-2 list-disc list-inside text-blue-50">
+                  <h4 className="mb-2 text-lg font-bold text-gray-900">Profil recherché</h4>
+                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
                     <li>Étudiant(e) en BTS SIO option SISR ou formation équivalente.</li>
                     <li>Connaissances de base en systèmes Linux (Debian) et réseaux (TCP/IP, VLANs).</li>
                     <li>Sensibilité aux enjeux de cybersécurité et volonté d'apprendre.</li>
@@ -342,16 +370,23 @@ function App() {
                     <li>Capacité à documenter et présenter vos travaux de manière professionnelle.</li>
                   </ul>
 
-                  <h4 className="mb-2 text-lg font-bold text-blue-50">Ce que nous offrons</h4>
-                  <ul className="mb-4 space-y-2 list-disc list-inside text-blue-50">
-                    <li>Une expérience pratique sur une infrastructure externalisée réelle.</li>
-                    <li>L’accompagnement d’experts en sécurité informatique.</li>
-                    <li>L’opportunité de monter en compétences rapidement sur des projets concrets.</li>
+                  <h4 className="mb-2 text-lg font-bold text-gray-900">Ce que nous offrons</h4>
+                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
+                    <li>Expérience pratique sur une infrastructure externalisée réelle.</li>
+                    <li>Accompagnement par des experts en sécurité informatique.</li>
+                    <li>Opportunité de monter en compétences rapidement.</li>
                   </ul>
 
                   <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
-                    <a href="mailto:siosecure@joliciel.pro" className="px-6 py-3 font-semibold text-blue-600 transition-all transform bg-white rounded-lg hover:bg-blue-50 hover:scale-105">Postuler (mailto)</a>
-                    <p className="mt-3 text-sm text-blue-200 md:mt-0">Date limite : MARDI 30/9/2025 – 18 h</p>
+                    <a href="mailto:siosecure@joliciel.pro" className="px-6 py-3 font-semibold text-white transition-all transform bg-green-600 rounded-lg hover:bg-blue-50 hover:scale-105">
+                      Postuler
+                    </a>                    
+                  </div>
+
+                  <div className="flex flex-col mt-4 ml-10">
+                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Date limite : Mardi 30/09/2025 – 18 h</p>
+                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Lieu : Normandie</p>
+                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Contact : siosecure@joliciel.pro</p>
                   </div>
                 </div>
 
@@ -385,7 +420,7 @@ function App() {
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
             <div>
-              <h3 className="mb-6 text-2xl font-bold text-gray-900">Nos Coordonnées</h3>
+              <h3 className="mb-6 text-2xl font-bold text-gray-900">Nos coordonnées</h3>
 
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
@@ -394,7 +429,7 @@ function App() {
                   </div>
                   <div>
                     <h4 className="mb-1 font-semibold text-gray-900">Adresse</h4>
-                    <p className="text-gray-600">Paris La Défense<br />92800 Puteaux, France</p>
+                    <p className="text-gray-600">Quelque part en Normandie</p>
                   </div>
                 </div>
 
