@@ -43,22 +43,21 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white">
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
-      }`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
+        }`}>
         <div className="px-4 mx-auto max-w-7xl sm:px-6">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center space-x-3">
-              <img src="/SIOsecure_logo.png" alt="SIOsecure" className="h-12" /> 
+              <img src="/SIOsecure_logo.png" alt="SIOsecure" className="h-12" />
               <div className="flex flex-col">
                 <span className="text-2xl font-bold text-blue-900">SIOsecure</span>
-                <span className="text-xs text-gray-500">Infrastructure, Développement, DevOps & Sécurité</span>
+                <span className="text-xs text-gray-500">Développement, Infrastructure & Sécurité</span>
               </div>
             </div>
 
             {/* Desktop navigation */}
             <div className="items-center hidden space-x-8 md:flex">
-              {[ 
+              {[
                 { id: 'accueil', label: 'Accueil' },
                 { id: 'entreprise', label: "L'Entreprise" },
                 { id: 'services', label: 'Nos Services' },
@@ -68,11 +67,10 @@ function App() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-colors relative pb-1 ${
-                    activeSection === item.id
+                  className={`text-sm font-medium transition-colors relative pb-1 ${activeSection === item.id
                       ? 'text-blue-600'
                       : 'text-gray-700 hover:text-blue-600'
-                  }`}
+                    }`}
                 >
                   {item.label}
                   {activeSection === item.id && (
@@ -100,7 +98,7 @@ function App() {
         {mobileMenuOpen && (
           <div className="bg-white border-t border-gray-100 shadow-lg md:hidden">
             <div className="flex flex-col px-4 py-4 space-y-2">
-              {[ 
+              {[
                 { id: 'accueil', label: 'Accueil' },
                 { id: 'entreprise', label: "L'Entreprise" },
                 { id: 'services', label: 'Nos Services' },
@@ -110,11 +108,10 @@ function App() {
                 <button
                   key={item.id}
                   onClick={() => { scrollToSection(item.id); setMobileMenuOpen(false); }}
-                  className={`w-full text-left text-base font-medium py-2 px-2 rounded transition-colors ${
-                    activeSection === item.id
+                  className={`w-full text-left text-base font-medium py-2 px-2 rounded transition-colors ${activeSection === item.id
                       ? 'text-blue-600 bg-blue-50'
                       : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
-                  }`}
+                    }`}
                 >
                   {item.label}
                 </button>
@@ -126,18 +123,18 @@ function App() {
 
       {/* Bannière visuelle */}
       <div className="flex items-center justify-center w-full bg-white pt-navbar">
-        <img 
-          src="/banniere.png" 
-          alt="Bannière SIOsecure" 
+        <img
+          src="/banniere.png"
+          alt="Bannière SIOsecure"
           className="w-full object-cover object-top max-h-50 sm:max-h-66 md:max-h-90 lg:max-h-[42rem] xl:max-h-[50rem]"
         />
       </div>
-      <section id="accueil" className="flex items-center py-1 bg-gradient-to-br from-blue-50 via-white to-blue-50">     
+      <section id="accueil" className="flex items-center py-1 bg-gradient-to-br from-blue-50 via-white to-blue-50">
         <div className="px-4 py-1 mx-auto max-w-7xl sm:px-6 sm:py-10">
           <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
             <div>
               <h1 className="mb-2 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl md:text-6xl">
-                SIOsecure <span className="text-blue-600">Infrastructure, Développement, DevOps & Sécurité</span>
+                SIOsecure <span className="text-blue-600">Développement, Infrastructure <br />& Sécurité</span>
               </h1>
               <p className="mb-6 text-lg font-medium text-gray-700">Bâtir et protéger votre logiciel et son infrastructure</p>
               <p className="mb-8 text-base leading-relaxed text-gray-600 sm:text-xl">
@@ -306,6 +303,39 @@ function App() {
                     <li>• Formations et certifications (OWASP, frameworks, etc.)</li>
                   </ul>
                 </div>
+              </div>
+
+              {/* Nouveau panneau pour Consultant Infra Sécurisée Junior */}
+              <div className="p-6 mt-6 border rounded-lg bg-white/5 backdrop-blur-sm border-white/10">
+                <h3 className="mb-4 text-2xl font-bold text-blue-100">Consultant Infra Sécurisée Junior</h3>
+                <p className="mb-4 text-blue-50">Dans le cadre du développement de nos activités, nous recherchons des consultants cybersécurité junior pour rejoindre notre pôle « Infrastructure & Sécurité ». Vous interviendrez au sein d’une équipe projet et serez en charge de :</p>
+                <ul className="mb-4 space-y-2 list-disc list-inside text-blue-50">
+                  <li>Déployer et administrer un pare-feu de type pfSense.</li>
+                  <li>Mettre en place et sécuriser une infrastructure mutualisée (Debian 13, Docker, LXC).</li>
+                  <li>Déployer des services métiers.</li>
+                  <li>Mettre en place des solutions de supervision et de détection d'intrusion (Suricata, Wazuh, Lynis).</li>
+                  <li>Rédiger des rapports techniques et de sécurité destinés à nos clients.</li>
+                </ul>
+
+                <h4 className="mb-2 text-lg font-bold text-blue-50">Profil recherché</h4>
+                <ul className="mb-4 space-y-2 list-disc list-inside text-blue-50">
+                  <li>Étudiant(e) en BTS SIO option SISR ou formation équivalente.</li>
+                  <li>Connaissances de base en systèmes Linux (Debian) et réseaux (TCP/IP, VLANs).</li>
+                  <li>Sensibilité aux enjeux de cybersécurité et volonté d'apprendre.</li>
+                  <li>Intérêt pour les environnements virtualisés (Proxmox) et conteneurisés (Docker).</li>
+                  <li>Capacité à documenter et présenter vos travaux de manière professionnelle.</li>
+                </ul>
+
+                <h4 className="mb-2 text-lg font-bold text-blue-50">Ce que nous offrons</h4>
+                <ul className="mb-4 space-y-2 list-disc list-inside text-blue-50">
+                  <li>Une expérience pratique sur une infrastructure externalisée réelle.</li>
+                  <li>L’accompagnement d’experts en sécurité informatique.</li>
+                  <li>L’opportunité de monter en compétences rapidement sur des projets concrets.</li>
+                </ul>
+
+                <p className="mb-4 text-blue-50">Intéressé(e) ? Rejoignez l’aventure et participez à la sécurisation des infrastructures de demain.</p>
+                <p className="mb-4 text-blue-50">Candidature : envoyez votre CV à <a href="mailto:siosecure@joliciel.pro" className="underline">siosecure@joliciel.pro</a></p>
+                <p className="text-sm text-blue-200">Date limite pour candidater : MARDI 30/9/2025 – 18 h</p>
               </div>
 
               <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
