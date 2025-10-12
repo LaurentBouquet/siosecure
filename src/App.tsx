@@ -205,11 +205,11 @@ function App() {
       </nav>
 
       {/* Bannière visuelle */}
-      <div className="flex items-center justify-center w-full bg-white pt-navbar">
+  <div className="flex items-center justify-center w-full bg-[#f4f7f9] pt-navbar">
         <img
           src="/banniere.png"
           alt="Bannière SIOsecure"
-          className="w-full object-cover object-top max-h-50 sm:max-h-66 md:max-h-90 lg:max-h-[42rem] xl:max-h-[50rem]"
+          className="w-full md:w-[85%] mx-auto object-cover object-top max-h-50 sm:max-h-66 md:max-h-90 lg:max-h-[42rem] xl:max-h-[50rem]"
         />
       </div>
       <section id="accueil" className="flex items-center py-1 bg-gradient-to-br from-blue-50 via-white to-blue-50">
