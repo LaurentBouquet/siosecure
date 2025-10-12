@@ -133,10 +133,10 @@ function App() {
           <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
             <div>
               <h1 className="mb-6 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl md:text-6xl">
-                Leader européen des <span className="text-blue-600">télécommunication</span>
+                ESN française spécialisée en <span className="text-blue-600">infogérance & cybersécurité</span>
               </h1>
               <p className="mb-8 text-base leading-relaxed text-gray-600 sm:text-xl">
-                Depuis notre siège à Paris La Défense, nous connectons l'Europe avec des solutions de télécommunications innovantes et fiables.
+                Depuis notre siège à Paris La Défense, nous accompagnons nos clients depuis notre datacenter basé en France (infrastructure externalisée) pour concevoir, sécuriser et opérer leurs solutions numériques critiques.
               </p>
               <div className="flex flex-col flex-wrap gap-4 sm:flex-row">
                 <button
@@ -204,10 +204,10 @@ function App() {
           <div className="p-6 bg-gray-50 rounded-2xl sm:p-12">
             <h3 className="mb-6 text-3xl font-bold text-gray-900">Notre Mission</h3>
             <p className="mb-6 text-lg leading-relaxed text-gray-700">
-              SIOsecure s'engage à fournir des solutions de télécommunications de pointe qui connectent les entreprises et les particuliers à travers l'Europe. Notre expertise en infrastructures haute disponibilité et notre engagement envers l'innovation font de nous le partenaire de confiance pour les projets critiques.
+              SIOsecure est une ESN polyvalente experte en infogérance, hébergement, cybersécurité, administration système et réseau, ainsi qu'en développement Web et mobile. Nous aidons nos clients à concevoir, sécuriser et optimiser leurs solutions numériques en combinant expertise technique et innovation logicielle.
             </p>
             <p className="text-lg leading-relaxed text-gray-700">
-              Nous investissons massivement dans la formation de nos talents et le développement de technologies durables pour construire le réseau de télécommunications de demain.
+              Nous opérons depuis un datacenter basé en France (infrastructure externalisée) et investissons dans la formation continue de nos talents pour garantir des services fiables et conformes aux meilleures pratiques de sécurité.
             </p>
           </div>
         </div>
@@ -277,28 +277,28 @@ function App() {
 
           <div className="p-6 mb-8 text-white bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl sm:p-12 sm:mb-12">
             <div className="max-w-4xl mx-auto">
-              <h3 className="mb-6 text-3xl font-bold">Apprenti administrateur système et réseau</h3>
+              <h3 className="mb-6 text-3xl font-bold">Consultant développement sécurisé junior</h3>
               <p className="mb-8 text-xl text-blue-100">
-                Rejoignez notre pôle infrastructure et développez votre expertise en environnements Linux haute disponibilité
+                Rejoignez notre pôle « Infrastructure & Sécurité » et participez au développement et à la sécurisation d'applications web et d'architectures DevOps pour nos clients.
               </p>
 
               <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 md:gap-6 md:mb-8">
                 <div className="p-6 rounded-lg bg-white/10 backdrop-blur-sm">
                   <h4 className="mb-3 text-lg font-bold">Profil recherché</h4>
                   <ul className="space-y-2 text-blue-50">
-                    <li>• Compétences en Linux et réseau</li>
-                    <li>• Intérêt pour la haute disponibilité</li>
-                    <li>• Esprit d'équipe et curiosité</li>
-                    <li>• Bac+2/3 en informatique</li>
+                    <li>• Étudiant(e) ou jeune diplômé(e) en développement (BTS SIO SLAM, licence ou équivalent)</li>
+                    <li>• Connaissances en développement Web (JavaScript/TypeScript, frameworks modernes)</li>
+                    <li>• Sensibilité à la sécurité applicative (OWASP) et volonté d'apprendre</li>
+                    <li>• Intérêt pour les pratiques DevOps (CI/CD, conteneurs)</li>
                   </ul>
                 </div>
 
                 <div className="p-6 rounded-lg bg-white/10 backdrop-blur-sm">
                   <h4 className="mb-3 text-lg font-bold">Nous offrons</h4>
                   <ul className="space-y-2 text-blue-50">
-                    <li>• Tutorat par un expert</li>
-                    <li>• Projets stimulants</li>
-                    <li>• Perspectives d'évolution</li>
+                    <li>• Expérience pratique sur des projets réels</li>
+                    <li>• Accompagnement par des experts en sécurité</li>
+                    <li>• Formations et certifications (OWASP, frameworks, etc.)</li>
                   </ul>
                 </div>
               </div>
@@ -312,7 +312,7 @@ function App() {
                 </button>
 
                 <a
-                  href="/SIOsecure-ASR-APP.pdf"
+                  href="/GIGANET-ASR-APP.pdf"
                   download
                   className="inline-flex items-center px-8 py-4 mt-3 font-semibold text-white transition-all transform bg-blue-600 rounded-lg md:mt-0 hover:bg-blue-700 hover:scale-105"
                 >
@@ -447,11 +447,11 @@ function App() {
         <div className="px-4 mx-auto max-w-7xl sm:px-6">
           <div className="flex flex-col items-center justify-between md:flex-row">
             <div className="flex items-center mb-4 space-x-3 md:mb-0">
-              <img src="/SIOsecure_logo.png" alt="SIOsecure" className="w-28 h-28 filter brightness-0 invert" />
+              <img src="/SIOsecure_logo.png" alt="SIOsecure" className="h-28 filter brightness-0 invert" />
             </div>
             <p className="text-sm text-center text-gray-400 md:text-right sm:text-base">
-              © {new Date().getFullYear()} SIOsecure. Leader européen des télécommunications.<br />
-              Tous droits réservés.
+              © {new Date().getFullYear()} SIOsecure. ESN — infogérance, cybersécurité et hébergement.
+              <br />Tous droits réservés.
             </p>
           </div>
         </div>

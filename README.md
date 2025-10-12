@@ -1,6 +1,6 @@
-# GigaNet - Site Web Officiel
+# SIOsecure - Site Web Officiel
 
-Site web officiel de GigaNet, leader européen des télécommunications.
+Site web officiel de SIOsecure, ESN française spécialisée en infogérance, hébergement, cybersécurité, administration système et réseau, ainsi qu'en développement web et mobile. Notre datacenter est basé en France (infrastructure externalisée) et nous accompagnons nos clients dans la conception, la sécurisation et l'optimisation de leurs solutions numériques.
 
 
 ## Déploiement sur GitHub Pages
@@ -15,7 +15,6 @@ Le projet inclut un workflow GitHub Actions qui déploie automatiquement le site
 1. **Activez GitHub Pages dans les paramètres du dépôt :**
    - Allez dans `Settings` > `Pages`
    - Source : sélectionnez `GitHub Actions`
-
 2. **Poussez votre code sur GitHub :**
    ```bash
    git add .
@@ -23,7 +22,7 @@ Le projet inclut un workflow GitHub Actions qui déploie automatiquement le site
    git push origin main
    ```
 
-3. Le site sera automatiquement déployé à l'adresse configurée dans le fichier `CNAME` : `giganet.joliciel.pro`
+3. Le site sera automatiquement déployé à l'adresse configurée dans le fichier `CNAME` : `siosecure.joliciel.pro`
 
 
 
@@ -51,10 +50,8 @@ Cette commande :
 
 ## Configuration du domaine personnalisé
 
-Le fichier `CNAME` contient le domaine personnalisé : `giganet.joliciel.pro`
+Le fichier `CNAME` contient le domaine personnalisé : `giganet.joliciel.pro` (modifiez-le si vous souhaitez utiliser `siosecure.joliciel.pro`)
 
-Pour utiliser votre propre domaine :
-1. Modifiez le fichier `CNAME` avec votre domaine
 2. Configurez les DNS de votre domaine pour pointer vers GitHub Pages
 
 
@@ -82,18 +79,13 @@ npm run preview
 
 - React 18
 - TypeScript
-- Vite
-- Tailwind CSS
-- Lucide React (icônes)
-
-
 
 ## Structure du projet
 
 ```
 .
 ├── public/              # Fichiers statiques
-│   └── GigaNet_logo.png
+│   └── SIOsecure_logo.png
 ├── src/
 │   ├── App.tsx         # Composant principal
 │   ├── main.tsx        # Point d'entrée
@@ -107,4 +99,4 @@ npm run preview
 
 ## Licence
 
-© 2025 GigaNet. Tous droits réservés.
+© 2025 SIOsecure. Tous droits réservés.
