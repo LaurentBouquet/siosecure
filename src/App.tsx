@@ -346,8 +346,9 @@ function App() {
                   </a>
                   
                   <button
-                    onClick={() => scrollToSection('contact')}
-                    className="px-8 py-4 font-semibold text-blue-600 transition-all transform bg-white rounded-lg hover:bg-blue-50 hover:scale-105"
+                    onClick={() => { if (!isExpired(deadlines.infra)) scrollToSection('contact'); }}
+                    disabled={isExpired(deadlines.infra)}
+                    className={`px-8 py-4 font-semibold transition-all transform rounded-lg ${isExpired(deadlines.infra) ? 'text-gray-400 bg-gray-200 cursor-not-allowed' : 'text-blue-600 bg-white hover:bg-blue-50 hover:scale-105'}`}
                   >
                     Postuler maintenant
                   </button>
@@ -411,8 +412,9 @@ function App() {
                   </a>
 
                   <button
-                    onClick={() => scrollToSection('contact')}
-                    className="px-8 py-4 font-semibold text-blue-600 transition-all transform bg-white rounded-lg hover:bg-blue-50 hover:scale-105"
+                    onClick={() => { if (!isExpired(deadlines.dev)) scrollToSection('contact'); }}
+                    disabled={isExpired(deadlines.dev)}
+                    className={`px-8 py-4 font-semibold transition-all transform rounded-lg ${isExpired(deadlines.dev) ? 'text-gray-400 bg-gray-200 cursor-not-allowed' : 'text-blue-600 bg-white hover:bg-blue-50 hover:scale-105'}`}
                   >
                     Postuler maintenant
                   </button>
