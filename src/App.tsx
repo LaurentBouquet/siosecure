@@ -43,18 +43,21 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white">
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
-      }`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
+        }`}>
         <div className="px-4 mx-auto max-w-7xl sm:px-6">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center space-x-3">
-              <img src="/SIOsecure_logo.png" alt="SIOsecure" className="h-12" /> 
+              <img src="/SIOsecure_logo.png" alt="SIOsecure" className="h-12" />
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-blue-900">SIOsecure</span>
+                <span className="text-xs text-gray-500">Développement, Infrastructure & Sécurité</span>
+              </div>
             </div>
 
             {/* Desktop navigation */}
             <div className="items-center hidden space-x-8 md:flex">
-              {[ 
+              {[
                 { id: 'accueil', label: 'Accueil' },
                 { id: 'entreprise', label: "L'Entreprise" },
                 { id: 'services', label: 'Nos Services' },
@@ -64,11 +67,10 @@ function App() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-colors relative pb-1 ${
-                    activeSection === item.id
-                      ? 'text-blue-600'
-                      : 'text-gray-700 hover:text-blue-600'
-                  }`}
+                  className={`text-sm font-medium transition-colors relative pb-1 ${activeSection === item.id
+                    ? 'text-blue-600'
+                    : 'text-gray-700 hover:text-blue-600'
+                    }`}
                 >
                   {item.label}
                   {activeSection === item.id && (
@@ -96,7 +98,7 @@ function App() {
         {mobileMenuOpen && (
           <div className="bg-white border-t border-gray-100 shadow-lg md:hidden">
             <div className="flex flex-col px-4 py-4 space-y-2">
-              {[ 
+              {[
                 { id: 'accueil', label: 'Accueil' },
                 { id: 'entreprise', label: "L'Entreprise" },
                 { id: 'services', label: 'Nos Services' },
@@ -106,11 +108,10 @@ function App() {
                 <button
                   key={item.id}
                   onClick={() => { scrollToSection(item.id); setMobileMenuOpen(false); }}
-                  className={`w-full text-left text-base font-medium py-2 px-2 rounded transition-colors ${
-                    activeSection === item.id
-                      ? 'text-blue-600 bg-blue-50'
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
-                  }`}
+                  className={`w-full text-left text-base font-medium py-2 px-2 rounded transition-colors ${activeSection === item.id
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                    }`}
                 >
                   {item.label}
                 </button>
@@ -122,21 +123,22 @@ function App() {
 
       {/* Bannière visuelle */}
       <div className="flex items-center justify-center w-full bg-white pt-navbar">
-        <img 
-          src="/banniere.png" 
-          alt="Bannière SIOsecure" 
+        <img
+          src="/banniere.png"
+          alt="Bannière SIOsecure"
           className="w-full object-cover object-top max-h-50 sm:max-h-66 md:max-h-90 lg:max-h-[42rem] xl:max-h-[50rem]"
         />
       </div>
-      <section id="accueil" className="flex items-center py-1 bg-gradient-to-br from-blue-50 via-white to-blue-50">     
+      <section id="accueil" className="flex items-center py-1 bg-gradient-to-br from-blue-50 via-white to-blue-50">
         <div className="px-4 py-1 mx-auto max-w-7xl sm:px-6 sm:py-10">
           <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
             <div>
-              <h1 className="mb-6 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl md:text-6xl">
-                Leader européen des <span className="text-blue-600">télécommunication</span>
+              <h1 className="mb-2 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl md:text-6xl">
+                SIOsecure <span className="text-blue-600">Développement, Infrastructure <br />& Sécurité</span>
               </h1>
+              <p className="mb-6 text-lg font-medium text-gray-700">Bâtir et protéger votre logiciel et son infrastructure</p>
               <p className="mb-8 text-base leading-relaxed text-gray-600 sm:text-xl">
-                Depuis notre siège à Paris La Défense, nous connectons l'Europe avec des solutions de télécommunications innovantes et fiables.
+                Depuis notre siège en Normandie, nous accompagnons nos clients depuis notre datacenter basé en Europe (infrastructure externalisée) pour concevoir, sécuriser et opérer leurs solutions numériques critiques.
               </p>
               <div className="flex flex-col flex-wrap gap-4 sm:flex-row">
                 <button
@@ -180,7 +182,7 @@ function App() {
               <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full">
                 <MapPin className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="mb-2 text-xl font-bold text-gray-900">Paris La Défense</h3>
+              <h3 className="mb-2 text-xl font-bold text-gray-900">Quelque part en Normandie</h3>
               <p className="text-gray-600">Siège social au cœur du quartier d'affaires européen</p>
             </div>
 
@@ -204,10 +206,10 @@ function App() {
           <div className="p-6 bg-gray-50 rounded-2xl sm:p-12">
             <h3 className="mb-6 text-3xl font-bold text-gray-900">Notre Mission</h3>
             <p className="mb-6 text-lg leading-relaxed text-gray-700">
-              SIOsecure s'engage à fournir des solutions de télécommunications de pointe qui connectent les entreprises et les particuliers à travers l'Europe. Notre expertise en infrastructures haute disponibilité et notre engagement envers l'innovation font de nous le partenaire de confiance pour les projets critiques.
+              SIOsecure est une ESN polyvalente experte en infrastructure système et réseau, développement Web et mobile, ainsi qu'en cybersécurité. Nous aidons nos clients à concevoir, sécuriser et exploiter leurs solutions numériques en combinant expertise technique et bonnes pratiques de sécurité.
             </p>
             <p className="text-lg leading-relaxed text-gray-700">
-              Nous investissons massivement dans la formation de nos talents et le développement de technologies durables pour construire le réseau de télécommunications de demain.
+              Nous opérons depuis un datacenter basé en Europe (infrastructure externalisée) et investissons dans la formation continue de nos talents pour garantir des services fiables et conformes aux meilleures pratiques de sécurité.
             </p>
           </div>
         </div>
@@ -219,40 +221,40 @@ function App() {
             <h2 className="mb-4 text-4xl font-bold text-gray-900">Nos Services</h2>
             <div className="w-20 h-1 mx-auto mb-6 bg-blue-600"></div>
             <p className="max-w-3xl mx-auto text-xl text-gray-600">
-              Des solutions complètes pour répondre aux besoins de télécommunications les plus exigeants
+              Solutions et services pour infrastructure système & réseau, développement applicatif (Web & mobile) et cybersécurité
             </p>
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 md:gap-8">
             {[
               {
-                title: 'Infrastructure Réseau',
-                description: 'Conception et déploiement d\'infrastructures réseau haute disponibilité pour garantir une connectivité optimale.',
+                title: 'Infrastructure système & réseau',
+                description: 'Conception, déploiement et exploitation d\'infrastructures systèmes et réseaux résilientes et sécurisées.',
                 icon: Network
               },
               {
-                title: 'Solutions Linux HA',
-                description: 'Environnements Linux haute disponibilité pour applications critiques avec garantie de continuité de service.',
+                title: 'Développement Web & mobile',
+                description: 'Conception et développement d\'applications Web et mobile sécurisées et performantes (front & back).',
                 icon: Award
               },
               {
-                title: 'Télécommunications d\'Entreprise',
-                description: 'Solutions complètes de communication pour entreprises, incluant VoIP, visioconférence et collaboration.',
-                icon: Phone
-              },
-              {
-                title: 'Cloud & Datacenter',
-                description: 'Services d\'hébergement cloud sécurisés et datacenters de dernière génération à travers l\'Europe.',
+                title: 'Cybersécurité applicative',
+                description: 'Audits, tests d\'intrusion et remédiation sécurité pour applications et APIs (aligné OWASP).',
                 icon: Globe
               },
               {
-                title: 'Support & Maintenance',
-                description: 'Équipes d\'experts disponibles 24/7 pour assurer le bon fonctionnement de vos infrastructures.',
+                title: 'Cloud & datacenter',
+                description: 'Services d\'hébergement et d\'orchestration cloud sécurisés en datacenter français.',
+                icon: Globe
+              },
+              {
+                title: 'Support & maintenance',
+                description: 'Équipes d\'assistance et d\'exploitation pour garantir la disponibilité des services.',
                 icon: Users
               },
               {
-                title: 'Conseil & Formation',
-                description: 'Accompagnement stratégique et programmes de formation pour développer vos compétences internes.',
+                title: 'Conseil & formation',
+                description: 'Accompagnement stratégique, formation sécurité et bonnes pratiques DevOps.',
                 icon: Award
               }
             ].map((service, index) => (
@@ -276,49 +278,127 @@ function App() {
           </div>
 
           <div className="p-6 mb-8 text-white bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl sm:p-12 sm:mb-12">
-            <div className="max-w-4xl mx-auto">
-              <h3 className="mb-6 text-3xl font-bold">Apprenti administrateur système et réseau</h3>
-              <p className="mb-8 text-xl text-blue-100">
-                Rejoignez notre pôle infrastructure et développez votre expertise en environnements Linux haute disponibilité
-              </p>
+            <div className="mx-auto max-w-7xl">
+              <div className="grid grid-cols-1 gap-10 md:gap-16 md:grid-cols-2">
 
-              <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 md:gap-6 md:mb-8">
-                <div className="p-6 rounded-lg bg-white/10 backdrop-blur-sm">
-                  <h4 className="mb-3 text-lg font-bold">Profil recherché</h4>
-                  <ul className="space-y-2 text-blue-50">
-                    <li>• Compétences en Linux et réseau</li>
-                    <li>• Intérêt pour la haute disponibilité</li>
-                    <li>• Esprit d'équipe et curiosité</li>
-                    <li>• Bac+2/3 en informatique</li>
+                {/* Panneau 2 : Consultant infra sécurisée junior */}
+                <div className="p-6 px-4 bg-white border border-gray-100 shadow-lg rounded-2xl">
+                  <h3 className="mb-4 text-2xl font-bold text-blue-600">Consultant infra sécurisée junior</h3>
+                  <p className="mb-4 text-gray-700">Nous recherchons des consultants cybersécurité junior
+                    pour rejoindre notre pôle « Infrastructure & Sécurité », dans le cadre du développement de nos activités.</p>
+
+                  <p className="mb-4 text-gray-700">Vous interviendrez au sein d’une équipe et serez en charge de :</p>
+
+                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
+                    <li>Déployer et administrer un pare-feu de type pfSense.</li>
+                    <li>Mettre en place et sécuriser une infrastructure mutualisée (Debian 13, Docker, LXC).</li>
+                    <li>Déployer des services métiers.</li>
+                    <li>TODO</li>
+                    <li>Mettre en place des solutions de supervision et de détection d'intrusion (Suricata, Wazuh, Lynis).</li>
+                    <li>Rédiger des rapports techniques et de sécurité destinés à nos clients.</li>
                   </ul>
+
+                  <h4 className="mb-2 text-lg font-bold text-gray-900">Profil recherché</h4>
+                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
+                    <li>Étudiant(e) en BTS SIO option SISR ou formation équivalente.</li>
+                    <li>Connaissances de base en systèmes Linux (Debian) et réseaux (TCP/IP, VLANs).</li>
+                    <li>Sensibilité aux enjeux de cybersécurité et volonté d'apprendre.</li>
+                    <li>Intérêt pour les environnements virtualisés (Proxmox) et conteneurisés (Docker).</li>
+                    <li>Capacité à documenter et présenter vos travaux de manière professionnelle.</li>
+                  </ul>
+
+                  <h4 className="mb-2 text-lg font-bold text-gray-900">Ce que nous offrons</h4>
+                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
+                    <li>Expérience sur des projets et une infrastructure externalisée réelle.</li>
+                    <li>Accompagnement par des experts en sécurité informatique.</li>
+                    <li>Opportunité de monter en compétences rapidement.</li>
+                  </ul>
+
+                  <hr className="my-4" />
+
+                  <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
+
+                    <a
+                      href="/offres-emploi/ConsultantOps/01_offre_emploi.pdf"
+                      download
+                      className="inline-flex items-center px-6 py-3 mt-3 font-semibold text-white transition-all transform bg-blue-600 rounded-lg md:mt-0 hover:bg-blue-700 hover:scale-105"
+                    >
+                      <FileText className="w-5 h-5 mr-2" />
+                      Télécharger (PDF)
+                    </a>
+
+                    <a href="mailto:siosecure@joliciel.pro" className="px-6 py-3 font-semibold text-white transition-all transform bg-green-600 rounded-lg hover:bg-green-700 hover:scale-105">
+                      Postuler
+                    </a>
+
+                  </div>
+
+                  <div className="flex flex-col mt-4 ml-10">
+                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Date limite : Mardi 30/09/2025 – 18 h</p>
+                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Lieu : Normandie</p>
+                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Contact : siosecure@joliciel.pro</p>
+                  </div>
                 </div>
 
-                <div className="p-6 rounded-lg bg-white/10 backdrop-blur-sm">
-                  <h4 className="mb-3 text-lg font-bold">Nous offrons</h4>
-                  <ul className="space-y-2 text-blue-50">
-                    <li>• Tutorat par un expert</li>
-                    <li>• Projets stimulants</li>
-                    <li>• Perspectives d'évolution</li>
+                {/* Panneau 1 : Consultant développement sécurisé junior */}
+                <div className="p-6 px-4 bg-white border border-gray-100 shadow-lg rounded-2xl">
+                  <h3 className="mb-4 text-2xl font-bold text-blue-600">Consultant développement sécurisé junior</h3>
+                  <p className="mb-4 text-gray-700">Rejoignez notre pôle « Développement Web & Sécurité » et participez au développement et à la sécurisation d'applications Web et d'architectures DevOps pour nos clients.</p>
+
+                  <p className="mb-4 text-gray-700">Vous interviendrez au sein d’une équipe et serez en charge de :</p>
+
+                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
+                    <li>Développer et sécuriser des applications Web full-stack.</li>
+                    <li>Implémenter des mécanismes d'authentification sécurisés (JWT, OAuth2, OpenID Connect).</li>
+                    <li>Réaliser des audits de vulnérabilités sur les applications Web (recherche d'injections SQL, XSS,
+                      LFI/RFI) selon les standards OWASP.</li>
+                    <li>Appliquer des pratiques de cryptographie (chiffrement des données sensibles).</li>
+                    <li>Rédiger des rapports techniques et de sécurité destinés à nos clients.</li>
                   </ul>
+
+                  <h4 className="mb-2 text-lg font-bold text-gray-900">Profil recherché</h4>
+                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
+                    <li>Étudiant(e) en BTS SIO option SLAM ou formation équivalente.</li>
+                    <li>Connaissances de base en développement Web (frameworks modernes) et bases de données (Supabase, SQL)</li>
+                    <li>Sensibilité à la sécurité applicative (OWASP) et volonté d'apprendre</li>
+                    <li>Intérêt pour les pratiques DevOps (CI/CD, conteneurs)</li>
+                    <li>Rédiger des rapports techniques et de sécurité destinés à nos clients.</li>
+                  </ul>
+
+                  <h4 className="mb-2 text-lg font-bold text-gray-900">Ce que nous offrons</h4>
+                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
+                    <li>Expérience sur des projets et une infrastructure externalisée réelle.</li>
+                    <li>Accompagnement par des experts en sécurité informatique.</li>
+                    <li>Opportunité de monter en compétences rapidement.</li>
+                  </ul>
+
+                  <hr className="my-4" />
+
+                  <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
+
+                    <a
+                      href="/offres-emploi/ConsultantDev/01_offre_emploi.pdf"
+                      download
+                      className="inline-flex items-center px-6 py-3 mt-3 font-semibold text-white transition-all transform bg-blue-600 rounded-lg md:mt-0 hover:bg-blue-700 hover:scale-105"
+                    >
+                      <FileText className="w-5 h-5 mr-2" />
+                      Télécharger (PDF)
+                    </a>
+
+                    <a href="mailto:siosecure@joliciel.pro" className="px-6 py-3 font-semibold text-white transition-all transform bg-green-600 rounded-lg hover:bg-green-700 hover:scale-105">
+                      Postuler
+                    </a>
+
+                  </div>
+
+                  <div className="flex flex-col mt-4 ml-10">
+                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Date limite : Vendredi 07/11/2025 – 13 h</p>
+                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Lieu : Normandie</p>
+                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Contact : siosecure@joliciel.pro</p>
+                  </div>
+
                 </div>
-              </div>
 
-              <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
-                <button
-                  onClick={() => scrollToSection('contact')}
-                  className="px-8 py-4 font-semibold text-blue-600 transition-all transform bg-white rounded-lg hover:bg-blue-50 hover:scale-105"
-                >
-                  Postuler Maintenant
-                </button>
-
-                <a
-                  href="/SIOsecure-ASR-APP.pdf"
-                  download
-                  className="inline-flex items-center px-8 py-4 mt-3 font-semibold text-white transition-all transform bg-blue-600 rounded-lg md:mt-0 hover:bg-blue-700 hover:scale-105"
-                >
-                  <FileText className="w-5 h-5 mr-3" />
-                  Télécharger l'offre d'emploi (PDF)
-                </a>
               </div>
             </div>
           </div>
@@ -349,7 +429,7 @@ function App() {
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
             <div>
-              <h3 className="mb-6 text-2xl font-bold text-gray-900">Nos Coordonnées</h3>
+              <h3 className="mb-6 text-2xl font-bold text-gray-900">Nos coordonnées</h3>
 
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
@@ -358,7 +438,7 @@ function App() {
                   </div>
                   <div>
                     <h4 className="mb-1 font-semibold text-gray-900">Adresse</h4>
-                    <p className="text-gray-600">Paris La Défense<br />92800 Puteaux, France</p>
+                    <p className="text-gray-600">Quelque part en Normandie</p>
                   </div>
                 </div>
 
@@ -447,11 +527,11 @@ function App() {
         <div className="px-4 mx-auto max-w-7xl sm:px-6">
           <div className="flex flex-col items-center justify-between md:flex-row">
             <div className="flex items-center mb-4 space-x-3 md:mb-0">
-              <img src="/SIOsecure_logo.png" alt="SIOsecure" className="w-28 h-28 filter brightness-0 invert" />
+              <img src="/SIOsecure_url.png" alt="SIOsecure" className="h-28 filter brightness-0 invert" />
             </div>
             <p className="text-sm text-center text-gray-400 md:text-right sm:text-base">
-              © {new Date().getFullYear()} SIOsecure. Leader européen des télécommunications.<br />
-              Tous droits réservés.
+              © {new Date().getFullYear()} SIOsecure. ESN — infrastructure système & réseau, développement Web & mobile et cybersécurité.
+              <br />Tous droits réservés.
             </p>
           </div>
         </div>
