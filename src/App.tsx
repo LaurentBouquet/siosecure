@@ -319,7 +319,7 @@ function App() {
                   <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
 
                     <a
-                      href="/offres-emploi/ConsultantDev/01_offre_emploi.pdf"
+                      href="/offres-emploi/ConsultantOps/01_offre_emploi.pdf"
                       download
                       className="inline-flex items-center px-6 py-3 mt-3 font-semibold text-white transition-all transform bg-blue-600 rounded-lg md:mt-0 hover:bg-blue-700 hover:scale-105"
                     >
@@ -527,7 +527,7 @@ function App() {
         <div className="px-4 mx-auto max-w-7xl sm:px-6">
           <div className="flex flex-col items-center justify-between md:flex-row">
             <div className="flex items-center mb-4 space-x-3 md:mb-0">
-              <img src="/SIOsecure_logo.png" alt="SIOsecure" className="h-28 filter brightness-0 invert" />
+              <img src="/SIOsecure_url.png" alt="SIOsecure" className="h-28 filter brightness-0 invert" />
             </div>
             <p className="text-sm text-center text-gray-400 md:text-right sm:text-base">
               © {new Date().getFullYear()} SIOsecure. ESN — infrastructure système & réseau, développement Web & mobile et cybersécurité.
