@@ -62,12 +62,33 @@ function App() {
     return new Date() > d;
   };
 
-  // Simple CountUp component (no external lib) - supports integers and one decimal place
+  // CountUp component: animation starts when the element becomes visible (IntersectionObserver)
   const CountUp = ({ end, suffix = '', decimals = 0 }: { end: number; suffix?: string; decimals?: number; }) => {
     const ref = useRef<HTMLSpanElement | null>(null);
+    const [started, setStarted] = useState(false);
+
+    // Observe visibility
     useEffect(() => {
+      const el = ref.current;
+      if (!el) return;
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setStarted(true);
+            // once started, we can disconnect
+            obs.disconnect();
+          }
+        });
+      }, { threshold: 0.2 });
+      obs.observe(el);
+      return () => obs.disconnect();
+    }, []);
+
+    useEffect(() => {
+      if (!started) return;
       let start: number | null = null;
       const duration = 800;
+      let rafId: number;
       const step = (timestamp: number) => {
         if (!start) start = timestamp;
         const progress = Math.min((timestamp - start) / duration, 1);
@@ -76,11 +97,13 @@ function App() {
           ref.current.textContent = decimals === 0 ? Math.round(current).toString() + suffix : current.toFixed(decimals) + suffix;
         }
         if (progress < 1) {
-          requestAnimationFrame(step);
+          rafId = requestAnimationFrame(step);
         }
       };
-      requestAnimationFrame(step);
-    }, [end, suffix, decimals]);
+      rafId = requestAnimationFrame(step);
+      return () => cancelAnimationFrame(rafId);
+    }, [started, end, decimals, suffix]);
+
     return <span ref={ref}></span>;
   };
 
