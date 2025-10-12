@@ -41,6 +41,27 @@ function App() {
     }
   };
 
+  // Deadlines for job offers (ISO date strings)
+  const deadlines = {
+    infra: '2025-09-30',
+    dev: '2025-11-07'
+  };
+
+  const formatDateFr = (isoDate: string) => {
+    try {
+      return new Intl.DateTimeFormat('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(isoDate));
+    } catch (e) {
+      return isoDate;
+    }
+  };
+
+  const isExpired = (isoDate: string) => {
+    const d = new Date(isoDate);
+    // consider the whole day
+    d.setHours(23, 59, 59, 999);
+    return new Date() > d;
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
@@ -331,6 +352,16 @@ function App() {
                     Postuler maintenant
                   </button>
 
+                  {/* Deadline & status */}
+                  <div className="flex items-center justify-start mt-3 space-x-3 md:mt-0 md:ml-4">
+                    <div className={`text-sm font-semibold ${isExpired(deadlines.infra) ? 'text-yellow-600' : 'text-emerald-400'}`}>
+                      Date limite : <br />{formatDateFr(deadlines.infra)}
+                    </div>
+                    <div className={`px-2 py-1 text-xs font-semibold rounded-full ${isExpired(deadlines.infra) ? 'bg-yellow-100 text-yellow-700' : 'bg-emerald-100 text-emerald-700'}`}>
+                      {isExpired(deadlines.infra) ? 'Terminée' : 'En cours'}
+                    </div>
+                  </div>
+
                 </div>
 
               </div>
@@ -341,8 +372,8 @@ function App() {
               <div className="mb-8">
                 <h3 className="mb-6 text-3xl font-bold">Consultant développement sécurisé junior</h3>
                 <p className="mb-8 text-xl text-blue-100">
-                  Rejoignez notre pôle « Infrastructure & Sécurité » 
-                  et participez au développement et à la sécurisation d'applications Web et d'architectures DevOps pour nos clients.
+                  Rejoignez notre pôle « Développement & Sécurité » 
+                  et participez au développement et à la sécurisation des applications Web de nos clients.
                 </p>
 
                 <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 md:gap-6 md:mb-8">
@@ -385,6 +416,16 @@ function App() {
                   >
                     Postuler maintenant
                   </button>
+
+                  {/* Deadline & status */}
+                  <div className="flex items-center justify-start mt-3 space-x-3 md:mt-0 md:ml-4">
+                    <div className={`text-sm font-semibold ${isExpired(deadlines.dev) ? 'text-yellow-600' : 'text-emerald-400'}`}>
+                      Date limite : <br /> {formatDateFr(deadlines.dev)}
+                    </div>
+                    <div className={`px-2 py-1 text-xs font-semibold rounded-full ${isExpired(deadlines.dev) ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
+                      {isExpired(deadlines.dev) ? 'Terminée' : 'En cours'}
+                    </div>
+                  </div>
 
                 </div>
               </div>
