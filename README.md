@@ -50,9 +50,9 @@ Cette commande :
 
 ## Configuration du domaine personnalisé
 
-Le fichier `CNAME` contient le domaine personnalisé : `giganet.joliciel.pro` (modifiez-le si vous souhaitez utiliser `siosecure.joliciel.pro`)
+Le fichier `CNAME` contient le domaine personnalisé : `siosecure.joliciel.pro`
 
-2. Configurez les DNS de votre domaine pour pointer vers GitHub Pages
+1. Configurez les DNS de votre domaine pour pointer vers GitHub Pages
 
 
 
