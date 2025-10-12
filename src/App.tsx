@@ -63,7 +63,7 @@ function App() {
   };
 
   // CountUp component: animation starts when the element becomes visible (IntersectionObserver)
-  const CountUp = ({ end, suffix = '', decimals = 0 }: { end: number; suffix?: string; decimals?: number; }) => {
+  const CountUp = ({ end, suffix = '', decimals = 0, duration = 2000 }: { end: number; suffix?: string; decimals?: number; duration?: number; }) => {
     const ref = useRef<HTMLSpanElement | null>(null);
     const [started, setStarted] = useState(false);
 
@@ -87,7 +87,6 @@ function App() {
     useEffect(() => {
       if (!started) return;
       let start: number | null = null;
-      const duration = 800;
       let rafId: number;
       const step = (timestamp: number) => {
         if (!start) start = timestamp;
@@ -498,15 +497,15 @@ function App() {
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
             <div className="text-center">
-              <div className="mb-2 text-4xl font-bold text-blue-600"><CountUp end={99.9} decimals={1} suffix="%" /></div>
+              <div className="mb-2 text-4xl font-bold text-blue-600"><CountUp end={99.9} decimals={1} suffix="%" duration={2000} /></div>
               <p className="text-gray-600">Disponibilité moyenne des services</p>
             </div>
             <div className="text-center">
-              <div className="mb-2 text-4xl font-bold text-blue-600"><CountUp end={120} /></div>
+              <div className="mb-2 text-4xl font-bold text-blue-600"><CountUp end={120} duration={2000} /></div>
               <p className="text-gray-600">Projets livrés à nos clients</p>
             </div>
             <div className="text-center">
-              <div className="mb-2 text-4xl font-bold text-blue-600"><CountUp end={30} /></div>
+              <div className="mb-2 text-4xl font-bold text-blue-600"><CountUp end={30} duration={2000} /></div>
               <p className="text-gray-600">Clients actifs</p>
             </div>
           </div>
