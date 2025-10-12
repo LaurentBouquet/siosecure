@@ -28,8 +28,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Padding pour éviter le chevauchement de la navbar sur mobile */
 .pt-navbar {
-	/* valeur réduite par défaut pour éviter trop d'espace sur petits écrans */
-	padding-top: 1.5rem;
+	/* Par défaut (mobile) : garder suffisamment d'espace pour la navbar fixe (h-16 ≈ 4rem) */
+	padding-top: 4rem;
 }
 
 /* Sur écrans moyens et larges on conserve l'espace équivalent à la hauteur de la navbar (h-20 = 5rem) */

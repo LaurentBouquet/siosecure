@@ -67,7 +67,7 @@ function App() {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
         }`}>
         <div className="px-4 mx-auto max-w-7xl sm:px-6">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-16 md:h-20">
             <div className="flex items-center space-x-3">
               <img src="/SIOsecure_logo.png" alt="SIOsecure" className="h-12" />
               <div className="flex flex-col">
@@ -335,7 +335,7 @@ function App() {
                   </div>
                 </div>
 
-                <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
+                <div className="flex flex-col mt-4 space-y-3 md:flex-row md:items-center md:space-x-4 md:space-y-0">
                   <a
                     href="/offres-emploi/ConsultantOps/01_offre_emploi.pdf"
                     download
@@ -345,13 +345,21 @@ function App() {
                     Télécharger l'offre d'emploi (PDF)
                   </a>
                   
-                  <button
-                    onClick={() => { if (!isExpired(deadlines.infra)) scrollToSection('contact'); }}
-                    disabled={isExpired(deadlines.infra)}
-                    className={`px-8 py-4 font-semibold transition-all transform rounded-lg ${isExpired(deadlines.infra) ? 'text-gray-400 bg-gray-200 cursor-not-allowed' : 'text-blue-600 bg-white hover:bg-blue-50 hover:scale-105'}`}
-                  >
-                    Postuler maintenant
-                  </button>
+                  {isExpired(deadlines.infra) ? (
+                    <button
+                      disabled
+                      className="px-8 py-4 font-semibold text-gray-400 transition-all transform bg-gray-200 rounded-lg cursor-not-allowed"
+                    >
+                      Postuler maintenant
+                    </button>
+                  ) : (
+                    <a
+                      href={`mailto:siosecure@joliciel.pro?subject=${encodeURIComponent('Candidature - Consultant infra sécurisée junior')}`}
+                      className="px-8 py-4 font-semibold text-blue-600 transition-all transform bg-white rounded-lg hover:bg-blue-50 hover:scale-105"
+                    >
+                      Postuler maintenant
+                    </a>
+                  )}
 
                   {/* Deadline & status */}
                   <div className="flex items-center justify-start mt-3 space-x-3 md:mt-0 md:ml-4">
@@ -374,7 +382,7 @@ function App() {
                 <h3 className="mb-6 text-3xl font-bold">Consultant développement sécurisé junior</h3>
                 <p className="mb-8 text-xl text-blue-100">
                   Rejoignez notre pôle « Développement & Sécurité » 
-                  et participez au développement et à la sécurisation des applications Web de nos clients.
+                  et participez au développement et à la sécurisation des applications Web de nos clients, au sein d’une équipe projet.
                 </p>
 
                 <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 md:gap-6 md:mb-8">
@@ -400,7 +408,7 @@ function App() {
                   </div>
                 </div>
 
-                <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
+                <div className="flex flex-col mt-4 space-y-3 md:flex-row md:items-center md:space-x-4 md:space-y-0">
 
                   <a
                     href="/offres-emploi/ConsultantDev/01_offre_emploi.pdf"
@@ -411,13 +419,21 @@ function App() {
                     Télécharger l'offre d'emploi (PDF)
                   </a>
 
-                  <button
-                    onClick={() => { if (!isExpired(deadlines.dev)) scrollToSection('contact'); }}
-                    disabled={isExpired(deadlines.dev)}
-                    className={`px-8 py-4 font-semibold transition-all transform rounded-lg ${isExpired(deadlines.dev) ? 'text-gray-400 bg-gray-200 cursor-not-allowed' : 'text-blue-600 bg-white hover:bg-blue-50 hover:scale-105'}`}
-                  >
-                    Postuler maintenant
-                  </button>
+                  {isExpired(deadlines.dev) ? (
+                    <button
+                      disabled
+                      className="px-8 py-4 font-semibold text-gray-400 transition-all transform bg-gray-200 rounded-lg cursor-not-allowed"
+                    >
+                      Postuler maintenant
+                    </button>
+                  ) : (
+                    <a
+                      href={`mailto:siosecure@joliciel.pro?subject=${encodeURIComponent('Candidature - Consultant développement sécurisé junior')}`}
+                      className="px-8 py-4 font-semibold text-blue-600 transition-all transform bg-white rounded-lg hover:bg-blue-50 hover:scale-105"
+                    >
+                      Postuler maintenant
+                    </a>
+                  )}
 
                   {/* Deadline & status */}
                   <div className="flex items-center justify-start mt-3 space-x-3 md:mt-0 md:ml-4">
