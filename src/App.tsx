@@ -287,8 +287,8 @@ function App() {
                 <p className="mb-8 text-xl text-blue-100">
                   Dans le cadre du développement de nos activités, 
                   nous recherchons des consultants cybersécurité junior pour rejoindre notre pôle « Infrastructure & Sécurité ». 
-                  
-                  Vous interviendrez au sein d’une équipe projet et serez en charge de :
+
+                  Vous interviendrez au sein d’une équipe projet et participerez à la sécurisation de nos infrastructures informatiques.
                 </p>
 
                 <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 md:gap-6 md:mb-8">
@@ -519,8 +519,10 @@ function App() {
               <img src="/SIOsecure_url.png" alt="SIOsecure" className="h-28 filter brightness-0 invert" />
             </div>
             <p className="text-sm text-center text-gray-400 md:text-right sm:text-base">
-              © {new Date().getFullYear()} SIOsecure. ESN — infrastructure système & réseau, développement Web & mobile et cybersécurité.
-              <br />Tous droits réservés.
+              © {new Date().getFullYear()} SIOsecure. ESN — Développement Web & mobile, infrastructure système & réseau et cybersécurité.
+              <br />
+              Entreprise fictive utilisée dans le cadre d'une formation en cybersécurité (BTS SIO) 
+              au <a href="https://ndlpavranches.fr/lycee/" target="_blank">lycée NDLP</a>.
             </p>
           </div>
         </div>
