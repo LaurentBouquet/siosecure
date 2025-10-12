@@ -68,8 +68,8 @@ function App() {
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className={`text-sm font-medium transition-colors relative pb-1 ${activeSection === item.id
-                      ? 'text-blue-600'
-                      : 'text-gray-700 hover:text-blue-600'
+                    ? 'text-blue-600'
+                    : 'text-gray-700 hover:text-blue-600'
                     }`}
                 >
                   {item.label}
@@ -109,8 +109,8 @@ function App() {
                   key={item.id}
                   onClick={() => { scrollToSection(item.id); setMobileMenuOpen(false); }}
                   className={`w-full text-left text-base font-medium py-2 px-2 rounded transition-colors ${activeSection === item.id
-                      ? 'text-blue-600 bg-blue-50'
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                    ? 'text-blue-600 bg-blue-50'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                     }`}
                 >
                   {item.label}
@@ -278,79 +278,22 @@ function App() {
           </div>
 
           <div className="p-6 mb-8 text-white bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl sm:p-12 sm:mb-12">
-              <div className="mx-auto max-w-7xl">
+            <div className="mx-auto max-w-7xl">
               <div className="grid grid-cols-1 gap-10 md:gap-16 md:grid-cols-2">
-
-                {/* Panneau 1 : Consultant développement sécurisé junior */}
-                <div className="p-6 px-4 bg-white border border-gray-100 shadow-lg rounded-2xl">
-                  <h3 className="mb-4 text-2xl font-bold text-blue-600">Consultant développement sécurisé junior</h3>
-                  <p className="mb-4 text-gray-700">Rejoignez notre pôle « Développement Web & Sécurité » et participez au développement et à la sécurisation d'applications Web et d'architectures DevOps pour nos clients.</p>
-
-                  <p className="mb-4 text-gray-700">Vous interviendrez au sein d’une équipe et serez en charge de :</p>
-
-                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
-                    <li>Développer et sécuriser des applications Web full-stack.</li>
-                    <li>Implémenter des mécanismes d'authentification sécurisés (JWT, OAuth2, OpenID Connect).</li>
-                    <li>Réaliser des audits de vulnérabilités sur les applications Web (recherche d'injections SQL, XSS,
-LFI/RFI) selon les standards OWASP.</li>
-                    <li>Appliquer des pratiques de cryptographie (chiffrement des données sensibles).</li>
-                    <li>Rédiger des rapports techniques et de sécurité destinés à nos clients.</li>
-                  </ul>
-                  
-                  <h4 className="mb-2 text-lg font-bold text-gray-900">Profil recherché</h4>
-                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
-                    <li>Étudiant(e) en BTS SIO option SLAM ou formation équivalente.</li>
-                    <li>Connaissances de base en développement Web (frameworks modernes) et bases de données (Supabase, SQL)</li>
-                    <li>Sensibilité à la sécurité applicative (OWASP) et volonté d'apprendre</li>
-                    <li>Intérêt pour les pratiques DevOps (CI/CD, conteneurs)</li>
-                  </ul>
-
-                  <h4 className="mb-2 text-lg font-bold text-gray-900">Ce que nous offrons</h4>
-                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
-                    <li>Expérience sur des projets et une infrastructure externalisée réelle.</li>
-                    <li>Accompagnement par des experts en sécurité informatique.</li>
-                    <li>Opportunité de monter en compétences rapidement.</li>
-                  </ul>
-
-                  <hr className="my-4" />
-                  
-                  <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
-                
-                    <a
-                      href="/offres-emploi/ConsultantDev/01_offre_emploi.pdf"
-                      download
-                      className="inline-flex items-center px-6 py-3 mt-3 font-semibold text-white transition-all transform bg-blue-600 rounded-lg md:mt-0 hover:bg-blue-700 hover:scale-105"
-                    >
-                      <FileText className="w-5 h-5 mr-2" />
-                      Télécharger (PDF)
-                    </a>
-                    
-                    <a href="mailto:siosecure@joliciel.pro" className="px-6 py-3 font-semibold text-white transition-all transform bg-green-600 rounded-lg hover:bg-blue-50 hover:scale-105">
-                      Postuler
-                    </a>  
-
-                  </div>
-                  
-                  <div className="flex flex-col mt-4 ml-10">
-                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Date limite : Vendredi 07/11/2025 – 13 h</p>
-                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Lieu : Normandie</p>
-                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Contact : siosecure@joliciel.pro</p>
-                  </div>
-
-                </div>
 
                 {/* Panneau 2 : Consultant infra sécurisée junior */}
                 <div className="p-6 px-4 bg-white border border-gray-100 shadow-lg rounded-2xl">
                   <h3 className="mb-4 text-2xl font-bold text-blue-600">Consultant infra sécurisée junior</h3>
-                  <p className="mb-4 text-gray-700">Nous recherchons des consultants cybersécurité junior 
+                  <p className="mb-4 text-gray-700">Nous recherchons des consultants cybersécurité junior
                     pour rejoindre notre pôle « Infrastructure & Sécurité », dans le cadre du développement de nos activités.</p>
-                    
+
                   <p className="mb-4 text-gray-700">Vous interviendrez au sein d’une équipe et serez en charge de :</p>
 
                   <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
                     <li>Déployer et administrer un pare-feu de type pfSense.</li>
                     <li>Mettre en place et sécuriser une infrastructure mutualisée (Debian 13, Docker, LXC).</li>
                     <li>Déployer des services métiers.</li>
+                    <li>TODO</li>
                     <li>Mettre en place des solutions de supervision et de détection d'intrusion (Suricata, Wazuh, Lynis).</li>
                     <li>Rédiger des rapports techniques et de sécurité destinés à nos clients.</li>
                   </ul>
@@ -366,15 +309,15 @@ LFI/RFI) selon les standards OWASP.</li>
 
                   <h4 className="mb-2 text-lg font-bold text-gray-900">Ce que nous offrons</h4>
                   <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
-                    <li>Expérience pratique sur une infrastructure externalisée réelle.</li>
+                    <li>Expérience sur des projets et une infrastructure externalisée réelle.</li>
                     <li>Accompagnement par des experts en sécurité informatique.</li>
                     <li>Opportunité de monter en compétences rapidement.</li>
                   </ul>
 
                   <hr className="my-4" />
-                  
+
                   <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
-                
+
                     <a
                       href="/offres-emploi/ConsultantDev/01_offre_emploi.pdf"
                       download
@@ -383,18 +326,77 @@ LFI/RFI) selon les standards OWASP.</li>
                       <FileText className="w-5 h-5 mr-2" />
                       Télécharger (PDF)
                     </a>
-                    
-                    <a href="mailto:siosecure@joliciel.pro" className="px-6 py-3 font-semibold text-white transition-all transform bg-green-600 rounded-lg hover:bg-blue-50 hover:scale-105">
+
+                    <a href="mailto:siosecure@joliciel.pro" className="px-6 py-3 font-semibold text-white transition-all transform bg-green-600 rounded-lg hover:bg-green-700 hover:scale-105">
                       Postuler
-                    </a>  
+                    </a>
 
                   </div>
-                  
+
                   <div className="flex flex-col mt-4 ml-10">
                     <p className="mt-3 text-sm text-blue-700 md:mt-0">Date limite : Mardi 30/09/2025 – 18 h</p>
                     <p className="mt-3 text-sm text-blue-700 md:mt-0">Lieu : Normandie</p>
                     <p className="mt-3 text-sm text-blue-700 md:mt-0">Contact : siosecure@joliciel.pro</p>
                   </div>
+                </div>
+
+                {/* Panneau 1 : Consultant développement sécurisé junior */}
+                <div className="p-6 px-4 bg-white border border-gray-100 shadow-lg rounded-2xl">
+                  <h3 className="mb-4 text-2xl font-bold text-blue-600">Consultant développement sécurisé junior</h3>
+                  <p className="mb-4 text-gray-700">Rejoignez notre pôle « Développement Web & Sécurité » et participez au développement et à la sécurisation d'applications Web et d'architectures DevOps pour nos clients.</p>
+
+                  <p className="mb-4 text-gray-700">Vous interviendrez au sein d’une équipe et serez en charge de :</p>
+
+                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
+                    <li>Développer et sécuriser des applications Web full-stack.</li>
+                    <li>Implémenter des mécanismes d'authentification sécurisés (JWT, OAuth2, OpenID Connect).</li>
+                    <li>Réaliser des audits de vulnérabilités sur les applications Web (recherche d'injections SQL, XSS,
+                      LFI/RFI) selon les standards OWASP.</li>
+                    <li>Appliquer des pratiques de cryptographie (chiffrement des données sensibles).</li>
+                    <li>Rédiger des rapports techniques et de sécurité destinés à nos clients.</li>
+                  </ul>
+
+                  <h4 className="mb-2 text-lg font-bold text-gray-900">Profil recherché</h4>
+                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
+                    <li>Étudiant(e) en BTS SIO option SLAM ou formation équivalente.</li>
+                    <li>Connaissances de base en développement Web (frameworks modernes) et bases de données (Supabase, SQL)</li>
+                    <li>Sensibilité à la sécurité applicative (OWASP) et volonté d'apprendre</li>
+                    <li>Intérêt pour les pratiques DevOps (CI/CD, conteneurs)</li>
+                    <li>Rédiger des rapports techniques et de sécurité destinés à nos clients.</li>
+                  </ul>
+
+                  <h4 className="mb-2 text-lg font-bold text-gray-900">Ce que nous offrons</h4>
+                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
+                    <li>Expérience sur des projets et une infrastructure externalisée réelle.</li>
+                    <li>Accompagnement par des experts en sécurité informatique.</li>
+                    <li>Opportunité de monter en compétences rapidement.</li>
+                  </ul>
+
+                  <hr className="my-4" />
+
+                  <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
+
+                    <a
+                      href="/offres-emploi/ConsultantDev/01_offre_emploi.pdf"
+                      download
+                      className="inline-flex items-center px-6 py-3 mt-3 font-semibold text-white transition-all transform bg-blue-600 rounded-lg md:mt-0 hover:bg-blue-700 hover:scale-105"
+                    >
+                      <FileText className="w-5 h-5 mr-2" />
+                      Télécharger (PDF)
+                    </a>
+
+                    <a href="mailto:siosecure@joliciel.pro" className="px-6 py-3 font-semibold text-white transition-all transform bg-green-600 rounded-lg hover:bg-green-700 hover:scale-105">
+                      Postuler
+                    </a>
+
+                  </div>
+
+                  <div className="flex flex-col mt-4 ml-10">
+                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Date limite : Vendredi 07/11/2025 – 13 h</p>
+                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Lieu : Normandie</p>
+                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Contact : siosecure@joliciel.pro</p>
+                  </div>
+
                 </div>
 
               </div>
