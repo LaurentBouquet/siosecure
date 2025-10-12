@@ -41,6 +41,27 @@ function App() {
     }
   };
 
+  // Deadlines for job offers (ISO date strings)
+  const deadlines = {
+    infra: '2025-09-30',
+    dev: '2025-11-07'
+  };
+
+  const formatDateFr = (isoDate: string) => {
+    try {
+      return new Intl.DateTimeFormat('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(isoDate));
+    } catch (e) {
+      return isoDate;
+    }
+  };
+
+  const isExpired = (isoDate: string) => {
+    const d = new Date(isoDate);
+    // consider the whole day
+    d.setHours(23, 59, 59, 999);
+    return new Date() > d;
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
@@ -138,7 +159,8 @@ function App() {
               </h1>
               <p className="mb-6 text-lg font-medium text-gray-700">Bâtir et protéger votre logiciel et son infrastructure</p>
               <p className="mb-8 text-base leading-relaxed text-gray-600 sm:text-xl">
-                Depuis notre siège en Normandie, nous accompagnons nos clients depuis notre datacenter basé en Europe (infrastructure externalisée) pour concevoir, sécuriser et opérer leurs solutions numériques critiques.
+                Depuis notre siège en Normandie, et via notre datacenter européen (infrastructure externalisée), 
+                nous concevons, sécurisons et implémentons les solutions numériques critiques de nos clients.
               </p>
               <div className="flex flex-col flex-wrap gap-4 sm:flex-row">
                 <button
@@ -160,7 +182,7 @@ function App() {
                 <Network className="w-full h-40 text-white sm:h-64 opacity-20" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white">
-                    <div className="mb-2 text-4xl font-bold sm:text-6xl">10 000+</div>
+                    <div className="mb-2 text-4xl font-bold sm:text-6xl">1000+</div>
                     <div className="text-lg font-light sm:text-2xl">Collaborateurs</div>
                   </div>
                 </div>
@@ -190,7 +212,7 @@ function App() {
               <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full">
                 <Users className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="mb-2 text-xl font-bold text-gray-900">10 000+ Collaborateurs</h3>
+              <h3 className="mb-2 text-xl font-bold text-gray-900">1000+ Collaborateurs</h3>
               <p className="text-gray-600">Une équipe d'experts répartie dans toute l'Europe</p>
             </div>
 
@@ -278,128 +300,138 @@ function App() {
           </div>
 
           <div className="p-6 mb-8 text-white bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl sm:p-12 sm:mb-12">
-            <div className="mx-auto max-w-7xl">
-              <div className="grid grid-cols-1 gap-10 md:gap-16 md:grid-cols-2">
+            <div className="max-w-4xl mx-auto">
 
-                {/* Panneau 2 : Consultant infra sécurisée junior */}
-                <div className="p-6 px-4 bg-white border border-gray-100 shadow-lg rounded-2xl">
-                  <h3 className="mb-4 text-2xl font-bold text-blue-600">Consultant infra sécurisée junior</h3>
-                  <p className="mb-4 text-gray-700">Nous recherchons des consultants cybersécurité junior
-                    pour rejoindre notre pôle « Infrastructure & Sécurité », dans le cadre du développement de nos activités.</p>
+              {/* Annonce 2 : Consultant infra sécurisée junior */}
+              <div className="mb-8">
+                <h3 className="mb-6 text-3xl font-bold">Consultant infra sécurisée junior</h3>
+                <p className="mb-8 text-xl text-blue-100">
+                  Dans le cadre du développement de nos activités, 
+                  nous recherchons des consultants cybersécurité junior pour rejoindre notre pôle « Infrastructure & Sécurité ». 
 
-                  <p className="mb-4 text-gray-700">Vous interviendrez au sein d’une équipe et serez en charge de :</p>
+                  Vous interviendrez au sein d’une équipe projet et participerez à la sécurisation de nos infrastructures informatiques.
+                </p>
 
-                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
-                    <li>Déployer et administrer un pare-feu de type pfSense.</li>
-                    <li>Mettre en place et sécuriser une infrastructure mutualisée (Debian 13, Docker, LXC).</li>
-                    <li>Déployer des services métiers.</li>
-                    <li>TODO</li>
-                    <li>Mettre en place des solutions de supervision et de détection d'intrusion (Suricata, Wazuh, Lynis).</li>
-                    <li>Rédiger des rapports techniques et de sécurité destinés à nos clients.</li>
-                  </ul>
-
-                  <h4 className="mb-2 text-lg font-bold text-gray-900">Profil recherché</h4>
-                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
-                    <li>Étudiant(e) en BTS SIO option SISR ou formation équivalente.</li>
-                    <li>Connaissances de base en systèmes Linux (Debian) et réseaux (TCP/IP, VLANs).</li>
-                    <li>Sensibilité aux enjeux de cybersécurité et volonté d'apprendre.</li>
-                    <li>Intérêt pour les environnements virtualisés (Proxmox) et conteneurisés (Docker).</li>
-                    <li>Capacité à documenter et présenter vos travaux de manière professionnelle.</li>
-                  </ul>
-
-                  <h4 className="mb-2 text-lg font-bold text-gray-900">Ce que nous offrons</h4>
-                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
-                    <li>Expérience sur des projets et une infrastructure externalisée réelle.</li>
-                    <li>Accompagnement par des experts en sécurité informatique.</li>
-                    <li>Opportunité de monter en compétences rapidement.</li>
-                  </ul>
-
-                  <hr className="my-4" />
-
-                  <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
-
-                    <a
-                      href="/offres-emploi/ConsultantOps/01_offre_emploi.pdf"
-                      download
-                      className="inline-flex items-center px-6 py-3 mt-3 font-semibold text-white transition-all transform bg-blue-600 rounded-lg md:mt-0 hover:bg-blue-700 hover:scale-105"
-                    >
-                      <FileText className="w-5 h-5 mr-2" />
-                      Télécharger (PDF)
-                    </a>
-
-                    <a href="mailto:siosecure@joliciel.pro" className="px-6 py-3 font-semibold text-white transition-all transform bg-green-600 rounded-lg hover:bg-green-700 hover:scale-105">
-                      Postuler
-                    </a>
-
+                <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 md:gap-6 md:mb-8">
+                  <div className="p-6 rounded-lg bg-blue-50">
+                    <h4 className="mb-3 text-lg font-bold text-gray-900">Missions principales</h4>
+                    <ul className="space-y-2 text-gray-700">
+                      <li>• Déployer et administrer un pare-feu de type pfSense.</li>
+                      <li>• Mettre en place et sécuriser une infrastructure mutualisée (Debian 13, Docker, LXC).</li>
+                      <li>• Déployer des services métiers.</li>
+                      <li>• Mettre en place des solutions de supervision et de détection d'intrusion (Suricata, Wazuh, Lynis).</li>
+                      <li>• Rédiger des rapports techniques et de sécurité destinés à nos clients.</li>
+                    </ul>
                   </div>
 
-                  <div className="flex flex-col mt-4 ml-10">
-                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Date limite : Mardi 30/09/2025 – 18 h</p>
-                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Lieu : Normandie</p>
-                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Contact : siosecure@joliciel.pro</p>
+                  <div className="p-6 rounded-lg bg-blue-50">
+                    <h4 className="mb-3 text-lg font-bold text-gray-900">Profil recherché</h4>
+                    <ul className="space-y-2 text-gray-700">
+                      <li>• Étudiant(e) en BTS SIO option SISR ou formation équivalente.</li>
+                      <li>• Connaissances de base en systèmes Linux (Debian) et réseaux (TCP/IP, VLANs).</li>
+                      <li>• Intérêt pour Proxmox, Docker et environnements virtualisés.</li>
+                      <li>• Expérience pratique sur une infrastructure externalisée réelle et accompagnement par des experts.</li>
+                    </ul>
                   </div>
                 </div>
 
-                {/* Panneau 1 : Consultant développement sécurisé junior */}
-                <div className="p-6 px-4 bg-white border border-gray-100 shadow-lg rounded-2xl">
-                  <h3 className="mb-4 text-2xl font-bold text-blue-600">Consultant développement sécurisé junior</h3>
-                  <p className="mb-4 text-gray-700">Rejoignez notre pôle « Développement Web & Sécurité » et participez au développement et à la sécurisation d'applications Web et d'architectures DevOps pour nos clients.</p>
+                <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
+                  <a
+                    href="/offres-emploi/ConsultantOps/01_offre_emploi.pdf"
+                    download
+                    className="inline-flex items-center px-8 py-4 mt-3 font-semibold text-white transition-all transform bg-blue-600 rounded-lg md:mt-0 hover:bg-blue-700 hover:scale-105"
+                  >
+                    <FileText className="w-5 h-5 mr-3" />
+                    Télécharger l'offre d'emploi (PDF)
+                  </a>
+                  
+                  <button
+                    onClick={() => { if (!isExpired(deadlines.infra)) scrollToSection('contact'); }}
+                    disabled={isExpired(deadlines.infra)}
+                    className={`px-8 py-4 font-semibold transition-all transform rounded-lg ${isExpired(deadlines.infra) ? 'text-gray-400 bg-gray-200 cursor-not-allowed' : 'text-blue-600 bg-white hover:bg-blue-50 hover:scale-105'}`}
+                  >
+                    Postuler maintenant
+                  </button>
 
-                  <p className="mb-4 text-gray-700">Vous interviendrez au sein d’une équipe et serez en charge de :</p>
-
-                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
-                    <li>Développer et sécuriser des applications Web full-stack.</li>
-                    <li>Implémenter des mécanismes d'authentification sécurisés (JWT, OAuth2, OpenID Connect).</li>
-                    <li>Réaliser des audits de vulnérabilités sur les applications Web (recherche d'injections SQL, XSS,
-                      LFI/RFI) selon les standards OWASP.</li>
-                    <li>Appliquer des pratiques de cryptographie (chiffrement des données sensibles).</li>
-                    <li>Rédiger des rapports techniques et de sécurité destinés à nos clients.</li>
-                  </ul>
-
-                  <h4 className="mb-2 text-lg font-bold text-gray-900">Profil recherché</h4>
-                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
-                    <li>Étudiant(e) en BTS SIO option SLAM ou formation équivalente.</li>
-                    <li>Connaissances de base en développement Web (frameworks modernes) et bases de données (Supabase, SQL)</li>
-                    <li>Sensibilité à la sécurité applicative (OWASP) et volonté d'apprendre</li>
-                    <li>Intérêt pour les pratiques DevOps (CI/CD, conteneurs)</li>
-                    <li>Rédiger des rapports techniques et de sécurité destinés à nos clients.</li>
-                  </ul>
-
-                  <h4 className="mb-2 text-lg font-bold text-gray-900">Ce que nous offrons</h4>
-                  <ul className="mb-4 space-y-2 text-gray-600 list-disc list-inside">
-                    <li>Expérience sur des projets et une infrastructure externalisée réelle.</li>
-                    <li>Accompagnement par des experts en sécurité informatique.</li>
-                    <li>Opportunité de monter en compétences rapidement.</li>
-                  </ul>
-
-                  <hr className="my-4" />
-
-                  <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
-
-                    <a
-                      href="/offres-emploi/ConsultantDev/01_offre_emploi.pdf"
-                      download
-                      className="inline-flex items-center px-6 py-3 mt-3 font-semibold text-white transition-all transform bg-blue-600 rounded-lg md:mt-0 hover:bg-blue-700 hover:scale-105"
-                    >
-                      <FileText className="w-5 h-5 mr-2" />
-                      Télécharger (PDF)
-                    </a>
-
-                    <a href="mailto:siosecure@joliciel.pro" className="px-6 py-3 font-semibold text-white transition-all transform bg-green-600 rounded-lg hover:bg-green-700 hover:scale-105">
-                      Postuler
-                    </a>
-
-                  </div>
-
-                  <div className="flex flex-col mt-4 ml-10">
-                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Date limite : Vendredi 07/11/2025 – 13 h</p>
-                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Lieu : Normandie</p>
-                    <p className="mt-3 text-sm text-blue-700 md:mt-0">Contact : siosecure@joliciel.pro</p>
+                  {/* Deadline & status */}
+                  <div className="flex items-center justify-start mt-3 space-x-3 md:mt-0 md:ml-4">
+                    <div className={`text-sm font-semibold ${isExpired(deadlines.infra) ? 'text-yellow-600' : 'text-emerald-400'}`}>
+                      Date limite : <br />{formatDateFr(deadlines.infra)}
+                    </div>
+                    <div className={`px-2 py-1 text-xs font-semibold rounded-full ${isExpired(deadlines.infra) ? 'bg-yellow-100 text-yellow-700' : 'bg-emerald-100 text-emerald-700'}`}>
+                      {isExpired(deadlines.infra) ? 'Terminée' : 'En cours'}
+                    </div>
                   </div>
 
                 </div>
 
               </div>
+
+              <div className='my-8 border-t border-gray-200'></div>
+
+              {/* Annonce 2 : Consultant développement sécurisé junior */}
+              <div className="mb-8">
+                <h3 className="mb-6 text-3xl font-bold">Consultant développement sécurisé junior</h3>
+                <p className="mb-8 text-xl text-blue-100">
+                  Rejoignez notre pôle « Développement & Sécurité » 
+                  et participez au développement et à la sécurisation des applications Web de nos clients.
+                </p>
+
+                <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 md:gap-6 md:mb-8">
+                  <div className="p-6 rounded-lg bg-blue-50">
+                    <h4 className="mb-3 text-lg font-bold text-gray-900">Missions principales</h4>
+                    <ul className="space-y-2 text-gray-700">
+                      <li>• Développer et sécuriser des applications Web full-stack.</li>
+                      <li>• Implémenter des mécanismes d'authentification sécurisés (JWT, OAuth2, OpenID Connect).</li>
+                      <li>• Réaliser des audits de vulnérabilités sur les applications Web (recherche d'injections SQL, XSS, LFI/RFI) selon les standards OWASP.</li>
+                      <li>• Appliquer des pratiques de cryptographie (chiffrement des données sensibles).</li>
+                      <li>• Rédiger des rapports techniques et de sécurité destinés à nos clients.</li>
+                    </ul>
+                  </div>
+
+                  <div className="p-6 rounded-lg bg-blue-50">
+                    <h4 className="mb-3 text-lg font-bold text-gray-900">Profil recherché</h4>
+                    <ul className="space-y-2 text-gray-700">
+                      <li>• Étudiant(e) en BTS SIO option SLAM ou formation équivalente.</li>
+                      <li>• Connaissances de base en développement Web et bases de données (Supabase, SQL).</li>
+                      <li>• Sensibilité à la sécurité applicative (OWASP) et volonté d'apprendre.</li>
+                      <li>• Intérêt pour les pratiques DevOps (CI/CD, conteneurs) et opportunité de monter en compétence rapide.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
+
+                  <a
+                    href="/offres-emploi/ConsultantDev/01_offre_emploi.pdf"
+                    download
+                    className="inline-flex items-center px-8 py-4 mt-3 font-semibold text-white transition-all transform bg-blue-600 rounded-lg md:mt-0 hover:bg-blue-700 hover:scale-105"
+                  >
+                    <FileText className="w-5 h-5 mr-3" />
+                    Télécharger l'offre d'emploi (PDF)
+                  </a>
+
+                  <button
+                    onClick={() => { if (!isExpired(deadlines.dev)) scrollToSection('contact'); }}
+                    disabled={isExpired(deadlines.dev)}
+                    className={`px-8 py-4 font-semibold transition-all transform rounded-lg ${isExpired(deadlines.dev) ? 'text-gray-400 bg-gray-200 cursor-not-allowed' : 'text-blue-600 bg-white hover:bg-blue-50 hover:scale-105'}`}
+                  >
+                    Postuler maintenant
+                  </button>
+
+                  {/* Deadline & status */}
+                  <div className="flex items-center justify-start mt-3 space-x-3 md:mt-0 md:ml-4">
+                    <div className={`text-sm font-semibold ${isExpired(deadlines.dev) ? 'text-yellow-600' : 'text-emerald-400'}`}>
+                      Date limite : <br /> {formatDateFr(deadlines.dev)}
+                    </div>
+                    <div className={`px-2 py-1 text-xs font-semibold rounded-full ${isExpired(deadlines.dev) ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
+                      {isExpired(deadlines.dev) ? 'Terminée' : 'En cours'}
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -530,8 +562,10 @@ function App() {
               <img src="/SIOsecure_url.png" alt="SIOsecure" className="h-28 filter brightness-0 invert" />
             </div>
             <p className="text-sm text-center text-gray-400 md:text-right sm:text-base">
-              © {new Date().getFullYear()} SIOsecure. ESN — infrastructure système & réseau, développement Web & mobile et cybersécurité.
-              <br />Tous droits réservés.
+              © {new Date().getFullYear()} SIOsecure. ESN — Développement Web & mobile, infrastructure système & réseau et cybersécurité.
+              <br />
+              Entreprise fictive utilisée dans le cadre d'une formation en cybersécurité (BTS SIO) 
+              au <a href="https://ndlpavranches.fr/lycee/" target="_blank">lycée NDLP</a>.
             </p>
           </div>
         </div>
