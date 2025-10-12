@@ -138,7 +138,8 @@ function App() {
               </h1>
               <p className="mb-6 text-lg font-medium text-gray-700">Bâtir et protéger votre logiciel et son infrastructure</p>
               <p className="mb-8 text-base leading-relaxed text-gray-600 sm:text-xl">
-                Depuis notre siège en Normandie, nous accompagnons nos clients depuis notre datacenter basé en Europe (infrastructure externalisée) pour concevoir, sécuriser et opérer leurs solutions numériques critiques.
+                Depuis notre siège en Normandie, et via notre datacenter européen (infrastructure externalisée), 
+                nous concevons, sécurisons et implémentons les solutions numériques critiques de nos clients.
               </p>
               <div className="flex flex-col flex-wrap gap-4 sm:flex-row">
                 <button
@@ -160,7 +161,7 @@ function App() {
                 <Network className="w-full h-40 text-white sm:h-64 opacity-20" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white">
-                    <div className="mb-2 text-4xl font-bold sm:text-6xl">10 000+</div>
+                    <div className="mb-2 text-4xl font-bold sm:text-6xl">1000+</div>
                     <div className="text-lg font-light sm:text-2xl">Collaborateurs</div>
                   </div>
                 </div>
@@ -190,7 +191,7 @@ function App() {
               <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full">
                 <Users className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="mb-2 text-xl font-bold text-gray-900">10 000+ Collaborateurs</h3>
+              <h3 className="mb-2 text-xl font-bold text-gray-900">1000+ Collaborateurs</h3>
               <p className="text-gray-600">Une équipe d'experts répartie dans toute l'Europe</p>
             </div>
 
@@ -303,7 +304,7 @@ function App() {
                   </div>
 
                   <div className="p-6 rounded-lg bg-blue-50">
-                    <h4 className="mb-3 text-lg font-bold text-gray-900">Profil & avantages</h4>
+                    <h4 className="mb-3 text-lg font-bold text-gray-900">Profil recherché</h4>
                     <ul className="space-y-2 text-gray-700">
                       <li>• Étudiant(e) en BTS SIO option SISR ou formation équivalente.</li>
                       <li>• Connaissances de base en systèmes Linux (Debian) et réseaux (TCP/IP, VLANs).</li>
@@ -346,21 +347,23 @@ function App() {
 
                 <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 md:gap-6 md:mb-8">
                   <div className="p-6 rounded-lg bg-blue-50">
-                    <h4 className="mb-3 text-lg font-bold text-gray-900">Profil recherché</h4>
+                    <h4 className="mb-3 text-lg font-bold text-gray-900">Missions principales</h4>
                     <ul className="space-y-2 text-gray-700">
-                      <li>• Étudiant(e) en BTS SIO option SLAM ou formation équivalente</li>
-                      <li>• Connaissances en développement Web (JavaScript/TypeScript, frameworks modernes)</li>
-                      <li>• Sensibilité à la sécurité applicative (OWASP) et volonté d'apprendre</li>
-                      <li>• Intérêt pour les pratiques DevOps (CI/CD, conteneurs)</li>
+                      <li>• Développer et sécuriser des applications Web full-stack.</li>
+                      <li>• Implémenter des mécanismes d'authentification sécurisés (JWT, OAuth2, OpenID Connect).</li>
+                      <li>• Réaliser des audits de vulnérabilités sur les applications Web (recherche d'injections SQL, XSS, LFI/RFI) selon les standards OWASP.</li>
+                      <li>• Appliquer des pratiques de cryptographie (chiffrement des données sensibles).</li>
+                      <li>• Rédiger des rapports techniques et de sécurité destinés à nos clients.</li>
                     </ul>
                   </div>
 
                   <div className="p-6 rounded-lg bg-blue-50">
-                    <h4 className="mb-3 text-lg font-bold text-gray-900">Nous offrons</h4>
+                    <h4 className="mb-3 text-lg font-bold text-gray-900">Profil recherché</h4>
                     <ul className="space-y-2 text-gray-700">
-                      <li>• Expérience pratique sur une infrastructure externalisée réelle et accompagnement par des experts.</li>
-                      <li>• Accompagnement par des experts en sécurité</li>
-                      <li>• Formations et certifications (OWASP, frameworks, etc.)</li>
+                      <li>• Étudiant(e) en BTS SIO option SLAM ou formation équivalente.</li>
+                      <li>• Connaissances de base en développement Web et bases de données (Supabase, SQL).</li>
+                      <li>• Sensibilité à la sécurité applicative (OWASP) et volonté d'apprendre.</li>
+                      <li>• Intérêt pour les pratiques DevOps (CI/CD, conteneurs) et opportunité de monter en compétence rapide.</li>
                     </ul>
                   </div>
                 </div>
