@@ -278,82 +278,83 @@ function App() {
           </div>
 
           <div className="p-6 mb-8 text-white bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl sm:p-12 sm:mb-12">
-            <div className="max-w-4xl mx-auto">
-              <h3 className="mb-6 text-3xl font-bold">Consultant développement sécurisé junior</h3>
-              <p className="mb-8 text-xl text-blue-100">
-                Rejoignez notre pôle « Développement Web & Sécurité » et participez au développement et à la sécurisation d'applications Web et d'architectures DevOps pour nos clients.
-              </p>
+            <div className="mx-auto max-w-7xl">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
 
-              <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 md:gap-6 md:mb-8">
-                <div className="p-6 rounded-lg bg-white/10 backdrop-blur-sm">
-                  <h4 className="mb-3 text-lg font-bold">Profil recherché</h4>
-                  <ul className="space-y-2 text-blue-50">
-                    <li>• Étudiant(e) ou jeune diplômé(e) en développement (BTS SIO SLAM, licence ou équivalent)</li>
-                    <li>• Connaissances en développement Web (JavaScript/TypeScript, frameworks modernes)</li>
-                    <li>• Sensibilité à la sécurité applicative (OWASP) et volonté d'apprendre</li>
-                    <li>• Intérêt pour les pratiques DevOps (CI/CD, conteneurs)</li>
+                {/* Panneau 1 : Consultant développement sécurisé junior */}
+                <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm">
+                  <h3 className="mb-4 text-2xl font-bold text-blue-100">Consultant développement sécurisé junior</h3>
+                  <p className="mb-4 text-blue-50">Rejoignez notre pôle « Développement Web & Sécurité » et participez au développement et à la sécurisation d'applications Web et d'architectures DevOps pour nos clients.</p>
+
+                  <h4 className="mb-2 text-lg font-bold text-blue-50">Profil recherché</h4>
+                  <ul className="mb-4 space-y-2 list-disc list-inside text-blue-50">
+                    <li>Étudiant(e) ou jeune diplômé(e) en développement (BTS SIO SLAM, licence ou équivalent)</li>
+                    <li>Connaissances en développement Web (JavaScript/TypeScript, frameworks modernes)</li>
+                    <li>Sensibilité à la sécurité applicative (OWASP) et volonté d'apprendre</li>
+                    <li>Intérêt pour les pratiques DevOps (CI/CD, conteneurs)</li>
                   </ul>
+
+                  <h4 className="mb-2 text-lg font-bold text-blue-50">Nous offrons</h4>
+                  <ul className="mb-4 space-y-2 list-disc list-inside text-blue-50">
+                    <li>Expérience pratique sur des projets réels</li>
+                    <li>Accompagnement par des experts en sécurité</li>
+                    <li>Formations et certifications (OWASP, frameworks, etc.)</li>
+                  </ul>
+
+                  <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
+                    <button
+                      onClick={() => scrollToSection('contact')}
+                      className="px-6 py-3 font-semibold text-blue-600 transition-all transform bg-white rounded-lg hover:bg-blue-50 hover:scale-105"
+                    >
+                      Postuler
+                    </button>
+
+                    <a
+                      href="/offres-emploi/ConsultantDev/01_offre_emploi.pdf"
+                      download
+                      className="inline-flex items-center px-6 py-3 mt-3 font-semibold text-white transition-all transform bg-blue-600 rounded-lg md:mt-0 hover:bg-blue-700 hover:scale-105"
+                    >
+                      <FileText className="w-5 h-5 mr-2" />
+                      Télécharger (PDF)
+                    </a>
+                  </div>
                 </div>
 
-                <div className="p-6 rounded-lg bg-white/10 backdrop-blur-sm">
-                  <h4 className="mb-3 text-lg font-bold">Nous offrons</h4>
-                  <ul className="space-y-2 text-blue-50">
-                    <li>• Expérience pratique sur des projets réels</li>
-                    <li>• Accompagnement par des experts en sécurité</li>
-                    <li>• Formations et certifications (OWASP, frameworks, etc.)</li>
+                {/* Panneau 2 : Consultant Infra Sécurisée Junior */}
+                <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm">
+                  <h3 className="mb-4 text-2xl font-bold text-blue-100">Consultant Infra Sécurisée Junior</h3>
+                  <p className="mb-4 text-blue-50">Dans le cadre du développement de nos activités, nous recherchons des consultants cybersécurité junior pour rejoindre notre pôle « Infrastructure & Sécurité ». Vous interviendrez au sein d’une équipe projet et serez en charge de :</p>
+
+                  <ul className="mb-4 space-y-2 list-disc list-inside text-blue-50">
+                    <li>Déployer et administrer un pare-feu de type pfSense.</li>
+                    <li>Mettre en place et sécuriser une infrastructure mutualisée (Debian 13, Docker, LXC).</li>
+                    <li>Déployer des services métiers.</li>
+                    <li>Mettre en place des solutions de supervision et de détection d'intrusion (Suricata, Wazuh, Lynis).</li>
+                    <li>Rédiger des rapports techniques et de sécurité destinés à nos clients.</li>
                   </ul>
+
+                  <h4 className="mb-2 text-lg font-bold text-blue-50">Profil recherché</h4>
+                  <ul className="mb-4 space-y-2 list-disc list-inside text-blue-50">
+                    <li>Étudiant(e) en BTS SIO option SISR ou formation équivalente.</li>
+                    <li>Connaissances de base en systèmes Linux (Debian) et réseaux (TCP/IP, VLANs).</li>
+                    <li>Sensibilité aux enjeux de cybersécurité et volonté d'apprendre.</li>
+                    <li>Intérêt pour les environnements virtualisés (Proxmox) et conteneurisés (Docker).</li>
+                    <li>Capacité à documenter et présenter vos travaux de manière professionnelle.</li>
+                  </ul>
+
+                  <h4 className="mb-2 text-lg font-bold text-blue-50">Ce que nous offrons</h4>
+                  <ul className="mb-4 space-y-2 list-disc list-inside text-blue-50">
+                    <li>Une expérience pratique sur une infrastructure externalisée réelle.</li>
+                    <li>L’accompagnement d’experts en sécurité informatique.</li>
+                    <li>L’opportunité de monter en compétences rapidement sur des projets concrets.</li>
+                  </ul>
+
+                  <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
+                    <a href="mailto:siosecure@joliciel.pro" className="px-6 py-3 font-semibold text-blue-600 transition-all transform bg-white rounded-lg hover:bg-blue-50 hover:scale-105">Postuler (mailto)</a>
+                    <p className="mt-3 text-sm text-blue-200 md:mt-0">Date limite : MARDI 30/9/2025 – 18 h</p>
+                  </div>
                 </div>
-              </div>
 
-              {/* Nouveau panneau pour Consultant Infra Sécurisée Junior */}
-              <div className="p-6 mt-6 border rounded-lg bg-white/5 backdrop-blur-sm border-white/10">
-                <h3 className="mb-4 text-2xl font-bold text-blue-100">Consultant Infra Sécurisée Junior</h3>
-                <p className="mb-4 text-blue-50">Dans le cadre du développement de nos activités, nous recherchons des consultants cybersécurité junior pour rejoindre notre pôle « Infrastructure & Sécurité ». Vous interviendrez au sein d’une équipe projet et serez en charge de :</p>
-                <ul className="mb-4 space-y-2 list-disc list-inside text-blue-50">
-                  <li>Déployer et administrer un pare-feu de type pfSense.</li>
-                  <li>Mettre en place et sécuriser une infrastructure mutualisée (Debian 13, Docker, LXC).</li>
-                  <li>Déployer des services métiers.</li>
-                  <li>Mettre en place des solutions de supervision et de détection d'intrusion (Suricata, Wazuh, Lynis).</li>
-                  <li>Rédiger des rapports techniques et de sécurité destinés à nos clients.</li>
-                </ul>
-
-                <h4 className="mb-2 text-lg font-bold text-blue-50">Profil recherché</h4>
-                <ul className="mb-4 space-y-2 list-disc list-inside text-blue-50">
-                  <li>Étudiant(e) en BTS SIO option SISR ou formation équivalente.</li>
-                  <li>Connaissances de base en systèmes Linux (Debian) et réseaux (TCP/IP, VLANs).</li>
-                  <li>Sensibilité aux enjeux de cybersécurité et volonté d'apprendre.</li>
-                  <li>Intérêt pour les environnements virtualisés (Proxmox) et conteneurisés (Docker).</li>
-                  <li>Capacité à documenter et présenter vos travaux de manière professionnelle.</li>
-                </ul>
-
-                <h4 className="mb-2 text-lg font-bold text-blue-50">Ce que nous offrons</h4>
-                <ul className="mb-4 space-y-2 list-disc list-inside text-blue-50">
-                  <li>Une expérience pratique sur une infrastructure externalisée réelle.</li>
-                  <li>L’accompagnement d’experts en sécurité informatique.</li>
-                  <li>L’opportunité de monter en compétences rapidement sur des projets concrets.</li>
-                </ul>
-
-                <p className="mb-4 text-blue-50">Intéressé(e) ? Rejoignez l’aventure et participez à la sécurisation des infrastructures de demain.</p>
-                <p className="mb-4 text-blue-50">Candidature : envoyez votre CV à <a href="mailto:siosecure@joliciel.pro" className="underline">siosecure@joliciel.pro</a></p>
-                <p className="text-sm text-blue-200">Date limite pour candidater : MARDI 30/9/2025 – 18 h</p>
-              </div>
-
-              <div className="flex flex-col mt-4 md:flex-row md:items-center md:space-x-4">
-                <button
-                  onClick={() => scrollToSection('contact')}
-                  className="px-8 py-4 font-semibold text-blue-600 transition-all transform bg-white rounded-lg hover:bg-blue-50 hover:scale-105"
-                >
-                  Postuler Maintenant
-                </button>
-
-                <a
-                  href="/offres-emploi/ConsultantDev/01_offre_emploi.pdf"
-                  download
-                  className="inline-flex items-center px-8 py-4 mt-3 font-semibold text-white transition-all transform bg-blue-600 rounded-lg md:mt-0 hover:bg-blue-700 hover:scale-105"
-                >
-                  <FileText className="w-5 h-5 mr-3" />
-                  Télécharger l'offre d'emploi (PDF)
-                </a>
               </div>
             </div>
           </div>
