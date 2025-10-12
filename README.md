@@ -1,6 +1,6 @@
-# SIOsecure - Site Web Officiel
+# SIOsecure – Infrastructure, Développement, DevOps & Sécurité
 
-Site web officiel de SIOsecure, ESN française spécialisée en infrastructure système et réseau, développement Web et mobile, ainsi qu'en cybersécurité. Notre datacenter est basé en France (infrastructure externalisée) et nous accompagnons nos clients dans la conception, la sécurisation et l'optimisation de leurs solutions numériques.
+Site web officiel de SIOsecure. Bâtir et protéger votre logiciel et son infrastructure. ESN française spécialisée en infrastructure système et réseau, développement Web et mobile, DevOps et cybersécurité. Datacenter basé en France.
 
 
 ## Déploiement sur GitHub Pages

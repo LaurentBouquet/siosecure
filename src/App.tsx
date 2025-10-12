@@ -50,6 +50,10 @@ function App() {
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center space-x-3">
               <img src="/SIOsecure_logo.png" alt="SIOsecure" className="h-12" /> 
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-blue-900">SIOsecure</span>
+                <span className="text-xs text-gray-500">Infrastructure, Développement, DevOps & Sécurité</span>
+              </div>
             </div>
 
             {/* Desktop navigation */}
@@ -132,9 +136,10 @@ function App() {
         <div className="px-4 py-1 mx-auto max-w-7xl sm:px-6 sm:py-10">
           <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
             <div>
-              <h1 className="mb-6 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl md:text-6xl">
-                ESN française spécialisée en <span className="text-blue-600">infrastructure système & réseau, développement Web & mobile et cybersécurité</span>
+              <h1 className="mb-2 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl md:text-6xl">
+                SIOsecure <span className="text-blue-600">Infrastructure, Développement, DevOps & Sécurité</span>
               </h1>
+              <p className="mb-6 text-lg font-medium text-gray-700">Bâtir et protéger votre logiciel et son infrastructure</p>
               <p className="mb-8 text-base leading-relaxed text-gray-600 sm:text-xl">
                 Depuis notre siège à Paris La Défense, nous accompagnons nos clients depuis notre datacenter basé en France (infrastructure externalisée) pour concevoir, sécuriser et opérer leurs solutions numériques critiques.
               </p>
@@ -279,7 +284,7 @@ function App() {
             <div className="max-w-4xl mx-auto">
               <h3 className="mb-6 text-3xl font-bold">Consultant développement sécurisé junior</h3>
               <p className="mb-8 text-xl text-blue-100">
-                Rejoignez notre pôle « Infrastructure & Sécurité » et participez au développement et à la sécurisation d'applications web et d'architectures DevOps pour nos clients.
+                Rejoignez notre pôle « Développement Web & Sécurité » et participez au développement et à la sécurisation d'applications Web et d'architectures DevOps pour nos clients.
               </p>
 
               <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 md:gap-6 md:mb-8">
@@ -312,7 +317,7 @@ function App() {
                 </button>
 
                 <a
-                  href="/GIGANET-ASR-APP.pdf"
+                  href="/offres-emploi/ConsultantDev/01_offre_emploi.pdf"
                   download
                   className="inline-flex items-center px-8 py-4 mt-3 font-semibold text-white transition-all transform bg-blue-600 rounded-lg md:mt-0 hover:bg-blue-700 hover:scale-105"
                 >
