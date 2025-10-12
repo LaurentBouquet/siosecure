@@ -133,7 +133,7 @@ function App() {
           <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
             <div>
               <h1 className="mb-6 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl md:text-6xl">
-                ESN française spécialisée en <span className="text-blue-600">infogérance & cybersécurité</span>
+                ESN française spécialisée en <span className="text-blue-600">infrastructure système & réseau, développement Web & mobile et cybersécurité</span>
               </h1>
               <p className="mb-8 text-base leading-relaxed text-gray-600 sm:text-xl">
                 Depuis notre siège à Paris La Défense, nous accompagnons nos clients depuis notre datacenter basé en France (infrastructure externalisée) pour concevoir, sécuriser et opérer leurs solutions numériques critiques.
@@ -204,7 +204,7 @@ function App() {
           <div className="p-6 bg-gray-50 rounded-2xl sm:p-12">
             <h3 className="mb-6 text-3xl font-bold text-gray-900">Notre Mission</h3>
             <p className="mb-6 text-lg leading-relaxed text-gray-700">
-              SIOsecure est une ESN polyvalente experte en infogérance, hébergement, cybersécurité, administration système et réseau, ainsi qu'en développement Web et mobile. Nous aidons nos clients à concevoir, sécuriser et optimiser leurs solutions numériques en combinant expertise technique et innovation logicielle.
+              SIOsecure est une ESN polyvalente experte en infrastructure système et réseau, développement Web et mobile, ainsi qu'en cybersécurité. Nous aidons nos clients à concevoir, sécuriser et exploiter leurs solutions numériques en combinant expertise technique et bonnes pratiques de sécurité.
             </p>
             <p className="text-lg leading-relaxed text-gray-700">
               Nous opérons depuis un datacenter basé en France (infrastructure externalisée) et investissons dans la formation continue de nos talents pour garantir des services fiables et conformes aux meilleures pratiques de sécurité.
@@ -219,40 +219,40 @@ function App() {
             <h2 className="mb-4 text-4xl font-bold text-gray-900">Nos Services</h2>
             <div className="w-20 h-1 mx-auto mb-6 bg-blue-600"></div>
             <p className="max-w-3xl mx-auto text-xl text-gray-600">
-              Des solutions complètes pour répondre aux besoins de télécommunications les plus exigeants
+              Solutions et services pour infrastructure système & réseau, développement applicatif (Web & mobile) et cybersécurité
             </p>
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 md:gap-8">
             {[
               {
-                title: 'Infrastructure Réseau',
-                description: 'Conception et déploiement d\'infrastructures réseau haute disponibilité pour garantir une connectivité optimale.',
+                title: 'Infrastructure Système & Réseau',
+                description: 'Conception, déploiement et exploitation d\'infrastructures systèmes et réseaux résilientes et sécurisées.',
                 icon: Network
               },
               {
-                title: 'Solutions Linux HA',
-                description: 'Environnements Linux haute disponibilité pour applications critiques avec garantie de continuité de service.',
+                title: 'Développement Web & Mobile',
+                description: 'Conception et développement d\'applications Web et mobile sécurisées et performantes (front & back).',
                 icon: Award
               },
               {
-                title: 'Télécommunications d\'Entreprise',
-                description: 'Solutions complètes de communication pour entreprises, incluant VoIP, visioconférence et collaboration.',
-                icon: Phone
+                title: 'Cybersécurité Applicative',
+                description: 'Audits, tests d\'intrusion et remédiation sécurité pour applications et APIs (aligné OWASP).',
+                icon: Globe
               },
               {
                 title: 'Cloud & Datacenter',
-                description: 'Services d\'hébergement cloud sécurisés et datacenters de dernière génération à travers l\'Europe.',
+                description: 'Services d\'hébergement et d\'orchestration cloud sécurisés en datacenter français.',
                 icon: Globe
               },
               {
                 title: 'Support & Maintenance',
-                description: 'Équipes d\'experts disponibles 24/7 pour assurer le bon fonctionnement de vos infrastructures.',
+                description: 'Équipes d\'assistance et d\'exploitation pour garantir la disponibilité des services.',
                 icon: Users
               },
               {
                 title: 'Conseil & Formation',
-                description: 'Accompagnement stratégique et programmes de formation pour développer vos compétences internes.',
+                description: 'Accompagnement stratégique, formation sécurité et bonnes pratiques DevOps.',
                 icon: Award
               }
             ].map((service, index) => (
@@ -450,7 +450,7 @@ function App() {
               <img src="/SIOsecure_logo.png" alt="SIOsecure" className="h-28 filter brightness-0 invert" />
             </div>
             <p className="text-sm text-center text-gray-400 md:text-right sm:text-base">
-              © {new Date().getFullYear()} SIOsecure. ESN — infogérance, cybersécurité et hébergement.
+              © {new Date().getFullYear()} SIOsecure. ESN — infrastructure système & réseau, développement Web & mobile et cybersécurité.
               <br />Tous droits réservés.
             </p>
           </div>
