@@ -364,7 +364,7 @@ function App() {
           <div className="p-6 mb-8 text-white bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl sm:p-12 sm:mb-12">
             <div className="max-w-4xl mx-auto">
 
-              {/* Annonce 2 : Consultant infra sécurisée junior */}
+              {/* Annonce 1 : Consultant infra sécurisée junior */}
               <div className="mb-8">
                 <h3 className="mb-6 text-3xl font-bold">Consultant infra sécurisée junior</h3>
                 <p className="mb-8 text-xl text-blue-100">
